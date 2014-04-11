@@ -1,0 +1,17 @@
+body {
+
+    background: url("../img/bg2.jpg");
+}
+
+.navbar{
+	line-height: 50px;
+}
+
+.navbar .nav > li{
+	line-height: 50px;
+}
+
+.brand{
+	
+}
+
