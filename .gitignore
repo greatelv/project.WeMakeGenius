@@ -2,3 +2,4 @@
 WebContent/WEB-INF/.gitignore
 .settings/
 .metadata/
+RemoteSystemsTempFiles/.project
