@@ -1,2 +1,4 @@
 /build
 WebContent/WEB-INF/.gitignore
+.settings/
+.metadata/
