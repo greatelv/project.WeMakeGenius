@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		//USER Table에서 data를 불러오는 경우
+		$('#get').click(function(){
+			$.ajax({
+				url		:	'getuser.jsp',
+				type	:	"POST",
+				dataType:	'json',
+				success	:	function(data){
+					
+					var item = [];
+					//해당 row 마다 delete할수 있도록 button을 추가한다.
+					$.each(data,function(idx, val){
+						item.push( "<li id='" + idx + "'>" 
+								+ val.ID + "|"
+								+ val.NAME + "|" 
+								+ val.AVATAR +"|" 
+								+ val.REGISTER_TIME + "|"
+								+ "</li>"
+								+ "<input type = " + "'" + "button" + "'"
+								+ "name = " + "'" + "delete" + "'" 
+								+ "id =" + "'" + val.ID +"'"
+								+ "value = " + "'" + "Delete data" + "'" 
+								+ "/>");
+					});
+					
+					//각각의 row에서 id값을 받아서 data를 지울수 있도록 한다.
+					$( "<ul/>", {
+					    "class": "my-new-list",
+					    html: item.join( "" )
+					  }).appendTo( "body" );
+					
+					
+					$("[name|='delete']").click(function(){
+						
+						var id = $(this).attr('id');
+						var json 	= {"ID" :id };
+						$.ajax({
+							url		:	'deleteuser.jsp',
+							type	:	'POST',
+							datatype:	'json',
+							data	:	json,
+							success	:	function(data_delete){
+								alert(data_delete);
+							},error	: function(){
+								console.log('error from delete');
+							},
+							complete: function(){
+								console.log('complete from delete');
+							}
+						});
+					});
+				},
+				error : function(){
+					console.log('error from get');
+				},
+				complete: function(){
+					console.log('complete from get')
+				}
+			});
+		});
+		
+		//post에 관련된 form에서 data를 입력할 경우 되는 처리과정
+		$('#post').click(function(){
+			$postid 		= document.getElementById("postid").value;
+			$postname		= document.getElementById("postname").value;
+			$postavatar		= document.getElementById("postavatar").value;
+			$postreg_TIME	= document.getElementById("postreg_TIME").value;
+			var json = {"AVATAR":$postavatar,"NAME":$postname,"ID":$postid,"REGISTER_TIME":$postreg_TIME};
+			console.log(json);
+			$.ajax({
+				url		:	"postuser.jsp",
+				type	:	"POST",
+				data	:	json,
+				datatype:	"json",
+				
+				success	: function(datapost){
+					alert(datapost);
+				},
+				error	: function(){
+					console.log('error from post');
+				},
+				complete: function(){
+					console.log('complete from post');
+				}
+			});
+		});
+	});
+</script>
+
+<body>
+	
+	<div>POST</div>
+	<div>ID     	  : <input type="text" id = "postid"/></div>
+	<div>NAME   	  : <input type="text" id = "postname"/></div> 
+	<div>AVATAR 	  : <input type="text" id = "postavatar"/></div> 
+	<div>REGISER_TIME : <input type="text" id = "postreg_TIME"/></div>
+	<input type="button" id="post" value="Post Data"/>
+		
+	<div>GET</div>
+	<input type="button" id="get" value="Get Data"/>  
+	
+</body>
+</html>
