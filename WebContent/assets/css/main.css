@@ -36,7 +36,7 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway";
+    font-family: 'Lato', 'NanumBarunGothic';
     font-weight: 300;
     color: #333;
 }
@@ -137,21 +137,23 @@ a:after {
 
 /* hello */
 #hello {
+	background: url(../img/ns_bg.jpg);
 	width: 100%;
 	padding-top: 200px;
 	padding-bottom: 200px;
 	margin-top: 90px;
+	position: relative;
 }
 
 #hello h1 {
-	font-size: 90px;
+	font-size: 105px;
 	font-weight: 700;
 	letter-spacing: 3px;
-	color: #74cfae;
+	color: #fff;
 }
 
 #hello h2 {
-	color: #c0c0c0;
+	color: #000;
 	font-weight: 400;
 }
 
@@ -271,4 +273,13 @@ a:after {
 #home-guide-img{
     width: 50%;
 	
+}
+
+#main-mv{
+    position: absolute;
+	
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
 }
