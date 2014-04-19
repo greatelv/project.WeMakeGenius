@@ -1,0 +1,3 @@
+/* common */
+.ellipsis { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.marquee { overflow: auto; white-space: nowrap; overflow-x: -webkit-marquee; -webkit-marquee: backwards 1px infinite scroll 23; }

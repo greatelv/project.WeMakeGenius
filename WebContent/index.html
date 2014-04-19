@@ -14,17 +14,15 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/common	.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/jquery-1.11.0.js"></script>
+    <script src="assets/js/jquery.scrollbox.js"></script>
     <script src="assets/js/chart.js"></script>
 
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+    <!-- 커스텀 페이지 모듈-->
+	<script src="assets/js/main.js"></script>
   </head>
 
   <body>
@@ -42,14 +40,45 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#login">로그인</a></li>
-            <li><a href="#join">회원가입</a></li>
+            <li class="active"><a href="#home">홈</a></li>
+            <li><a href="#join">게임 플레이</a></li>
             <li><a href="#setting">설정</a></li>
+            <li><a href="#setting">회원가입</a></li>
+            <li><a href="#setting">로그인</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
-
+    
+    <div id="rank-scroll" class="marquee">
+	  <ul>
+        <li>
+        	<span class="rank">1위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">2위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">3위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">4위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">5위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+      </ul>
+    </div>
 
 	<div id="hello">
 	    <div class="container">
@@ -61,22 +90,29 @@
 	    	</div><!-- /row -->
 	    </div> <!-- /container -->
 	</div><!-- /hello -->
-	
 	<div id="green">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 centered">
-					<img src="assets/img/iphone.png" alt="">
+					<img src="assets/img/06.jpg" alt="" id="home-guide-img">
 				</div>
 				
 				<div class="col-lg-7 centered">
-					<h3>WHAT WE CAN DO?</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<h3>We Make Genius 란?</h3>
+					<p>
+						근력 운동을 하면 근육이 커지듯, 두뇌 운동을 통해 머리를 키워 나간다!
+						인지능력과 기억능력을 향상 시킬 수 있는 좋은 방법!
+					</p>
+					<div>프로젝트 팀원 : 전태경, 정홍은, 이근재</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
+
+
 	
+	
+	<!--
 	<div class="container">
 		<div class="row centered mt grid">
 			<h3>OUR LATEST WORK</h3>
@@ -193,9 +229,8 @@
 							var myDoughnut = new Chart(document.getElementById("photoshop").getContext("2d")).Doughnut(doughnutData);
 					</script>
 				</div>
-			</div><!-- /row -->
-		</div><!-- /container -->
-	</div><!-- /skills -->
+			</div>
+		</div>
 	
 	<section id="contact"></section>
 	<div id="social">
@@ -216,17 +251,12 @@
 					</div>
 				</div>
 			</div>
-		</div><!-- /container -->
-	</div><!-- /social -->
-
-
-	<div id="f">
-		<div class="container">
-			<div class="row">
-				<p>Crafted with <i class="fa fa-heart"></i> by BlackTie.co.</p>
-			</div>
 		</div>
 	</div>
+	-->
+
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
