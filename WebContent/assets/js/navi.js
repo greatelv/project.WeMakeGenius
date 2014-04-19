@@ -1,6 +1,9 @@
 //메인 초기화
 $(function gnbClickHandler() {
 
+	$('.page').hide();
+	$('#page_home').show();
+
 	$('.page-locater').click(function(){
 		var targetRef = $(this).attr('ref');
 

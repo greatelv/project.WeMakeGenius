@@ -1,0 +1,30 @@
+#page_play {
+
+}
+
+#game_list_ctr{
+    position: relative;
+    top: 8em;
+    width: 3000px;
+}
+
+#game_list_ctr li{
+    float: left;
+	width: 634px;
+    height: 365px;
+    position: relative;
+    background-size: cover;
+    margin: 20px;
+    list-style: none;
+    background-color: #fff;
+    border: solid 1px;
+}
+
+#game_info_ctr{
+    height: 18em;
+	
+    position: absolute;
+    background-color: #A4D5EC;
+    bottom: 0px;
+    width: 100%;
+}
