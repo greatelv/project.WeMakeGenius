@@ -27,4 +27,9 @@
     background-color: #A4D5EC;
     bottom: 0px;
     width: 100%;
+    padding: 36px;
+}
+
+#game_info_ctr .game-meta{
+	
 }
