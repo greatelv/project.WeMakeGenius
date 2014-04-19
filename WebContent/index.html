@@ -43,8 +43,8 @@
             <li class="active"><a href="#home">홈</a></li>
             <li><a href="#join">게임 플레이</a></li>
             <li><a href="#setting">설정</a></li>
-            <li><a href="#setting">회원가입</a></li>
-            <li><a href="#setting">로그인</a></li>
+            <li><a href="#setting" data-toggle="modal" data-target=".join-modal">회원가입</a></li>
+            <li><a href="#setting" data-toggle="modal" data-target=".login-modal">로그인</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -114,6 +114,67 @@
 		</div>
 	</div>	
 
+	<div class="modal fade login-modal">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">로그인</h4>
+	      </div>
+	      <div class="modal-body">
+
+	      	<form  role="form">
+			  <div class="form-group">
+			    <label>학번</label>
+			    <input type="id" class="form-control" id="input-id" placeholder="학번을 입력하세요">
+			  </div>
+			  <div class="form-group">
+			    <label>비밀번호</label>
+			    <input type="password" class="form-control" id="input-pass" placeholder="비밀번호를 입력하세요">
+			  </div>
+			</form>
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-warning" data-dismiss="modal">취소</button>
+	        <button type="button" class="btn btn-primary">로그인</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade join-modal">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">등록</h4>
+	      </div>
+	      <div class="modal-body">
+
+	      	<form  role="form">
+			  <div class="form-group">
+			    <label>학번</label>
+			    <input type="id" class="form-control" id="input-id" placeholder="학번을 입력하세요">
+			  </div>
+			  <div class="form-group">
+			    <label>이름</label>
+			    <input type="name" class="form-control" id="input-id" placeholder="이름을 입력하세요">
+			  </div>
+			  <div class="form-group">
+			    <label>비밀번호</label>
+			    <input type="password" class="form-control" id="input-pass" placeholder="비밀번호를 입력하세요">
+			  </div>
+			</form>
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-warning" data-dismiss="modal">취소</button>
+	        <button type="button" class="btn btn-primary">등록</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 	
 	
@@ -261,7 +322,7 @@
 	-->
 
 
-
+	
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
