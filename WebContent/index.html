@@ -125,9 +125,15 @@
 	<div class="page" id="page_play">
 		<div id="game_list_ctr">
 			<ul>
-				<li style="background-image:url(assets/img/game/game1.jpg)"></li>
-				<li style="background-image:url(assets/img/game/game2.jpg)"></li>
-				<li></li>
+				<li style="background-image:url(assets/img/game/game1.jpg)" gameId="g1">
+					<button type="button" class="btn btn-info start">Start</button>
+				</li>
+				<li style="background-image:url(assets/img/game/game2.jpg)" gameId="g2">
+					<button type="button" class="btn btn-info start">Start</button>
+				</li>
+				<li>
+					Comming Soon
+				</li>
 			</ul>
 		</div>
 
@@ -143,15 +149,10 @@
 					</div>
 					
 					<div class="col-lg-7 centered">
-						
+						<div class="game-pic"></div>
 					</div>
 				</div>
-			</div>
-
-
-
-				
-			
+			</div>			
 		</div>
 
 	</div>
@@ -228,14 +229,16 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery-1.11.0.js"></script>
-    <script src="assets/js/jquery.scrollbox.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/jquery.li-scroller.1.0.js"></script>
+    <script src="assets/js/ext/jquery-1.11.0.js"></script>
+    <script src="assets/js/ext/jquery.scrollbox.js"></script>
+    <script src="assets/js/ext/bootstrap.js"></script>
+    <script src="assets/js/ext/jquery.li-scroller.1.0.js"></script>
+    <script src="assets/js/ext/underscore.js"></script>
     
 
     <!-- 커스텀 페이지 모듈-->
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/navi.js"></script>
+	<script src="assets/js/play.js"></script>
   </body>
 </html>
