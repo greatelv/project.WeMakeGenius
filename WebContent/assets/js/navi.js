@@ -1,4 +1,5 @@
 //메인 초기화
+//페이지간의 전환
 $(function gnbClickHandler() {
 
 	$('.page').hide();
@@ -15,5 +16,8 @@ $(function gnbClickHandler() {
 
 		//alert('targetRef : '+targetRef);
 	})
+
+	//순위 정보 Marquee
+	$("#rank-scroll > ul").liScroll({travelocity: 0.13});
 
 });

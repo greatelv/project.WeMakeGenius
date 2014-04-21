@@ -5,5 +5,7 @@
     margin-top: 90px;
 	
     overflow: hidden;
-    height: 865px;
+    /* height: 865px; */
 }
+
+.container { width: @container-desktop !important; }

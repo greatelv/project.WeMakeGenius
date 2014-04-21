@@ -140,10 +140,16 @@ a:after {
 #hello {
 	background: url(../img/ns_bg.jpg);
 	width: 100%;
-	padding-top: 177px;
-	padding-bottom: 177px;
-	position: relative;
+	/* padding-top: 177px; */
+	/* padding-bottom: 177px; */
+	height: 600px;
 }
+
+#hello > .container{
+    top: 12em;
+    position: relative;
+}
+
 
 #hello h1 {
 	font-size: 105px;
@@ -160,9 +166,9 @@ a:after {
 /* Green */
 #green {
 	background-color: #74cfae;
-	height: 350px;
+	height: 265px;
 	padding: 27px;
-	position: absolute;
+	position: fixed;
 	border: 0px;
 	bottom: 0px;
 	width: 100%;
@@ -242,16 +248,18 @@ a:after {
 
 
 #rank-scroll{
-    position: absolute;
+    position: fixed;
 
-    width: 100%;
+    width: 1920px;
     padding: 20px;
     z-index: 1;
+    overflow: hidden;
 }
 
 #rank-scroll ul{
     margin-bottom: 0px;
 	
+    position: relative;
 }
 
 #rank-scroll ul li{
