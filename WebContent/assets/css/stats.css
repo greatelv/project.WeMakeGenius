@@ -1,0 +1,39 @@
+#page_stats {
+
+}
+
+#page_stats .stats-ctn{
+    height: 600px; 
+    
+    padding: 27px;
+}
+
+#page_stats .stats-ctn > .container{
+    position: relative;
+
+    top: 3.2em;
+}
+
+#page_stats .stats-info{
+    position: absolute;
+    background-color: #FB96C1;
+    height: 265px;
+    padding: 27px;
+    position: fixed;
+    border: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+#page_stats h1{
+    display: inline-block;
+    position: absolute;
+}
+
+.stats-info ul {
+
+}
+
+.stats-info ul li{
+    
+}

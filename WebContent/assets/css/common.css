@@ -3,7 +3,7 @@
 .marquee { overflow: auto; white-space: nowrap; overflow-x: -webkit-marquee; -webkit-marquee: backwards 1px infinite scroll 23; }
 .page{
     margin-top: 90px;
-	
+	background: url(../img/ns_bg.jpg);
     overflow: hidden;
     /* height: 865px; */
 }
