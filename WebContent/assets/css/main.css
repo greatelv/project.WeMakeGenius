@@ -140,8 +140,6 @@ a:after {
 #hello {
 	background: url(../img/ns_bg.jpg);
 	width: 100%;
-	/* padding-top: 177px; */
-	/* padding-bottom: 177px; */
 	height: 600px;
 }
 

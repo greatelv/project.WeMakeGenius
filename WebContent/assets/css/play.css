@@ -3,12 +3,18 @@
 }
 
 #game_list_ctr{
-    position: relative;
-    top: 8em;
-    width: 3000px;
+	width: 3000px;
+	height: 600px; 
+    
 }
 
-#game_list_ctr li{
+#game_list_ctr > ul{
+    position: relative;
+
+    top: 5.2em;
+}
+
+#game_list_ctr > ul > li{
     float: left;
 	width: 634px;
     height: 365px;
@@ -20,15 +26,18 @@
     border: solid 1px;
 }
 
-#game_info_ctr{
-    height: 18em;
-	
+#game_info_ctr{	
     position: absolute;
     background-color: #A4D5EC;
-    bottom: 0px;
-    width: 100%;
-    padding: 36px;
+   	height: 265px;
+	padding: 27px;
+	position: fixed;
+	border: 0px;
+	bottom: 0px;
+	width: 100%;
 }
+
+
 
 #game_info_ctr .game-meta{
 	
