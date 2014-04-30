@@ -16,17 +16,15 @@
 	
 		Class.forName(driverName);
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wmg_dev","wmg","wmg");
-		String sql = "";
-		PreparedStatement ps;
-
-		ps.executeUpdate();
+		String sql = "select ID from USER";
+		
 	
 	}catch (ClassNotFoundException e){
 		e.printStackTrace();
 	}catch (SQLException e){
 		e.printStackTrace();
 	}finally{
-		out.println("postuser.jsp over.");	
+		out.println("login.jsp over.");	
 	}
 
 %>

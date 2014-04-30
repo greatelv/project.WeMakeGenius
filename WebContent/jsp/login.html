@@ -9,9 +9,13 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#login').click(function(){
-			$ajax({
+			$id = document.getElementById("id").value; 
+			var json = {"ID":$id};
+			console.log(json);
+			$.ajax({
 				url			: 	'login.jsp',
 				type		:	"POST",
+				data		:	json,
 				datatype	:	'json',
 				success		:	function(result){
 					alert(result);
@@ -30,7 +34,7 @@
 			if(result) {	
 				location.replace('join.html');
 			} else {
-				
+				location.replace('login.html');
 			}
 		});
 	});
