@@ -1,4 +1,4 @@
-//메인 초기화
+﻿//메인 초기화
 $(function () {
 	
 	//Play Page에서 게임 리스트 Over시 Info Container 정보 조회 
@@ -30,12 +30,12 @@ var gameMeta = [
 		id : 'g1',
 		title : '숫자비교게임',
 		desc : '숫자 비교 게임은 제한 시간 내에 이전 숫자와 새로운 숫자의 크기를 비교하는 게임 입니다.',
-		pic : '01.jpg'
+		pic : 'intention_game1.gif'
 	},
 	{
 		id : 'g2',
 		title : '아이템카운트',
 		desc : '그림에 나온 아이템의 개수를 기억한 후 정답을 맞추세요!',
-		pic : '02.jpg'
+		pic : 'intention_game2.gif'
 	},
 ];
