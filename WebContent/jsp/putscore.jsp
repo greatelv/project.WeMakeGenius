@@ -8,34 +8,36 @@
 
 <%
 
-JSONArray 	jsona = new JSONArray();
-
+String GAMETYPE = request.getParameter("GAMETYPE");
+String SCORE = request.getParameter("SCORE");
+int score = Integer.parseInt(SCORE);
+String MAXCOMBO = request.getParameter("MAXCOMBO");
+int maxcombo = Integer.parseInt(MAXCOMBO);
 String ID = request.getParameter("ID");
-String NAME = request.getParameter("NAME");
-String AVATAR = request.getParameter("AVATAR");
 
-
-
+//out.print(GAMETYPE + "," + score + "," + maxcombo + "," + ID);
 
 try{
 	String driverName = "com.mysql.jdbc.Driver";
 	
 	Class.forName(driverName);
 	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wmg_dev","wmg","wmg");
-	String sql = "INSERT INTO USER(ID, NAME, AVATAR, REGISTER_TIME) VALUES(?,?,?,now())";
+	String sql = "INSERT INTO PLAY(USER_ID, GAME_TYPE, SCORE, START_TIME, MAX_COMBO) VALUES(?,?,?,now(),?)";
 	PreparedStatement ps;
 	
 	ps = con.prepareStatement(sql);
 	ps.setString(1, ID);
-	ps.setString(2, NAME);
-	ps.setString(3, AVATAR);
+	ps.setString(2, GAMETYPE);
+	ps.setInt(3, score);
+	ps.setInt(4, maxcombo);
 	ps.executeUpdate();
 	
+	ps.close();
 }catch (ClassNotFoundException e){
 	e.printStackTrace();
 }catch (SQLException e){
 	e.printStackTrace();
 }finally{
-	out.println("postuser.jsp over.");	
+	out.println("score입력 완료");	
 }
 %>

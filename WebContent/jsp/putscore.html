@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Hello</title>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#submit').click(function(){
+		$gametype = document.getElementById("GAMETYPE").value; 
+		$score = document.getElementById("SCORE").value; 
+		$maxcombo = document.getElementById("MAXCOMBO").value;
+		$id = document.getElementById("ID").value; 
+		var json = {"GAMETYPE" : $gametype, "SCORE" : $score, "MAXCOMBO" : $maxcombo, "ID" : $id};
+		console.log(json);
+		$.ajax({
+			url			: 	'putscore.jsp',
+			type		:	"POST",
+			data		:	json,
+			datatype	:	'json',
+			success		:	function(result){
+				alert(result);
+			},
+			error	: function(){
+				console.log('error from putscore');
+			},
+			complete: function(){
+				console.log('complete from putscore');
+			}
+		});
+	});
+});
+</script>
+</head>
+
+
+</script>
+<body>
+	<div>GAME_TYPE     	  : <input type="text" id = "GAMETYPE"/></div>
+	<div>SCORE     	  : <input type="text" id = "SCORE"/></div>
+	<div>MAX_COMBO    : <input type="text" id = "MAXCOMBO"/></div>
+	<div>ID     	  : <input type="text" id = "ID"/></div>
+	<input type="button" id="submit" value="submit"/>
+</body>
+</html>

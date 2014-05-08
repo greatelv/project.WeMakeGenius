@@ -9,8 +9,8 @@
 
 	String ID = request.getParameter("ID");
 
-	out.print(ID);
-	
+	String test = null;
+	int i = 0;
 	try{
 		String driverName = "com.mysql.jdbc.Driver";
 	
@@ -18,13 +18,42 @@
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wmg_dev","wmg","wmg");
 		String sql = "select ID from USER";
 		
-	
+		ResultSet rs;
+		Statement stat = con.createStatement();
+		rs = stat.executeQuery(sql);
+		
+		while(rs.next()){
+			i += 1;
+		};
+		con.close();
 	}catch (ClassNotFoundException e){
 		e.printStackTrace();
 	}catch (SQLException e){
 		e.printStackTrace();
 	}finally{
-		out.println("login.jsp over.");	
+		out.println(i);
+	}
+	
+	try{
+		String driverName = "com.mysql.jdbc.Driver";
+		
+		Class.forName(driverName);
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wmg_dev","wmg","wmg");
+		String sql = "select ID from USER";
+		
+		ResultSet rs;
+		Statement stat = con.createStatement();
+		rs = stat.executeQuery(sql);
+		
+		while(rs.next()){
+			
+		};
+	}catch (ClassNotFoundException e){
+		e.printStackTrace();
+	}catch (SQLException e){
+		e.printStackTrace();
+	}finally{
+		
 	}
 
 %>
