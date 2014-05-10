@@ -73,8 +73,7 @@
 			$postid 		= document.getElementById("postid").value;
 			$postname		= document.getElementById("postname").value;
 			$postavatar		= document.getElementById("postavatar").value;
-			$postreg_TIME	= document.getElementById("postreg_TIME").value;
-			var json = {"AVATAR":$postavatar,"NAME":$postname,"ID":$postid,"REGISTER_TIME":$postreg_TIME};
+			var json = {"AVATAR":$postavatar,"NAME":$postname,"ID":$postid};
 			console.log(json);
 			$.ajax({
 				url		:	"postuser.jsp",
@@ -102,7 +101,6 @@
 	<div>ID     	  : <input type="text" id = "postid"/></div>
 	<div>NAME   	  : <input type="text" id = "postname"/></div> 
 	<div>AVATAR 	  : <input type="text" id = "postavatar"/></div> 
-	<div>REGISER_TIME : <input type="text" id = "postreg_TIME"/></div>
 	<input type="button" id="post" value="Post Data"/>
 		
 	<div>GET</div>
