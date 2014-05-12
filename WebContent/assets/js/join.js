@@ -1,13 +1,14 @@
 ﻿
 $(document).ready(function(){
 	$('#join').click(function(){
-			$postid 		= document.getElementById("input-id").value;
-			$postname		= document.getElementById("input-name").value;
-			$postavatar		= document.getElementById("input-pass").value;
-			var json = {"AVATAR":$postavatar,"NAME":$postname,"ID":$postid};
+			var postid = document.getElementById("input-register-id").value;
+			var postname = document.getElementById("input-register-name").value;
+			var postavatar = document.getElementById("input-register-pass").value;
+			alert(postid +" 님 회원가입을 시도중입니다.");
+			var json = {"AVATAR":postavatar,"NAME":postname,"ID":postid};
 			console.log(json);
 			$.ajax({
-				url		:	"join.jsp",
+				url		:	"jsp/join.jsp",
 				type	:	"POST",
 				data	:	json,
 				datatype:	"json",
