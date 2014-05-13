@@ -15,7 +15,7 @@
 		String driverName = "com.mysql.jdbc.Driver";
 	
 		Class.forName(driverName);
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wmg_dev","wmg","wmg");
+		Connection con = DriverManager.getConnection("jdbc:mysql://http://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
 		String sql = "select ID from USER";
 		
 		ResultSet rs;
@@ -38,7 +38,7 @@
 		String driverName = "com.mysql.jdbc.Driver";
 		
 		Class.forName(driverName);
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wmg_dev","wmg","wmg");
+		Connection con = DriverManager.getConnection("jdbc:mysql://http://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
 		String sql = "select ID from USER";
 		
 		ResultSet rs;

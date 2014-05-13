@@ -33,7 +33,33 @@
   				type		: "POST",
   				datatype	: 'json',
   				
-  				success
+  				success		: function(data){
+  					
+  					var item = [];
+  					$.each(data,function(key, value){
+  						item.push( "<li id='" + key + "'>" 
+								+ value.ID + "|"
+								+ value.LOGINTIME + "|"
+								+ "</li>"
+								+ "<input type = " + "'" + "button" + "'"
+								+ "name = " + "'" + "delete" + "'" 
+								+ "id =" + "'" + val.ID +"'"
+								+ "value = " + "'" + "Delete data" + "'" 
+								+ "/>");
+  					});
+  					
+  					$( "<ul/>", {
+					    "class": "my-new-list",
+					    html: item.join( "" )
+					  }).appendTo( "body" );
+					  console.log('success');
+  				},
+  				error : function(){
+					console.log('error from get');
+				},
+				complete: function(){
+					console.log('complete from get')
+				}
   			});
   		});
   	});

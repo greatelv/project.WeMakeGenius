@@ -32,13 +32,13 @@
 								+ "/>");
 					});
 					
-					//각각의 row에서 id값을 받아서 data를 지울수 있도록 한다.
+					
 					$( "<ul/>", {
 					    "class": "my-new-list",
 					    html: item.join( "" )
 					  }).appendTo( "body" );
 					
-					
+					//각각의 row에서 id값을 받아서 data를 지울수 있도록 한다.
 					$("[name|='delete']").click(function(){
 						
 						var id = $(this).attr('id');

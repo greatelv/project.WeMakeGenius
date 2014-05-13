@@ -14,7 +14,7 @@
 		String driverName = "com.mysql.jdbc.Driver";
 		
 		Class.forName(driverName);
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wmg_dev","wmg","wmg");
+		Connection con = DriverManager.getConnection("jdbc:mysql://http://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
 		PreparedStatement ps;
 		ResultSet rs;
 		Statement stat = con.createStatement();
@@ -24,9 +24,12 @@
 			
 			JSONObject 	jsono = new JSONObject();
 			
+			String ID = rs.getString("USER_ID");
+			String LOGINTIME = rs.getString("LOGIN_TIME");
+			out.print(ID + "," + LOGINTIME);
+			jsono.put("ID", ID);
+			jsono.put("LOGINTIME", LOGINTIME);
 			
-			jsono.put("ID", rs.getString("USER_ID"));
-			jsono.put("LOGINTIME", rs.getTime("LOGIN_TIME"));
 			
 			jsona.put(jsono); 	
 		}
