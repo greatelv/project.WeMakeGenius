@@ -1,4 +1,4 @@
-﻿
+
 $(document).ready(function(){
 	$('#join').click(function(){
 			var postid = document.getElementById("input-register-id").value;

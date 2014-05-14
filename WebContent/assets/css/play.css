@@ -40,18 +40,23 @@
 
 #game_info_ctr{ 
     position: absolute;
-    background-color: #A4D5EC;
+    /* background-color: #A4D5EC; */
     height: 265px;
     padding: 27px;
     position: fixed;
     border: 0px;
     bottom: 0px;
     width: 100%;
+    
+    background: none;
+    background-color: none;
+    background-position : center center;
+    background-repeat: no-repeat;
+    
 }
 
 #game_info_ctr .game-pic{
     display: inline-block;
-    
     width: 300px;
     height: 210px;
     background-size: cover;
