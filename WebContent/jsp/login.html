@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.js"></script>
  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <title>Login</title>
@@ -18,7 +18,7 @@
 				data		:	json,
 				datatype	:	'json',
 				success		:	function(result){
-					alert(result);
+					
 				},
 				error	: function(){
 					console.log('error from post');
@@ -30,7 +30,7 @@
 		});
 		
 		$('#join').click(function(){
-			var result = confirm('È¸¿ø°¡ÀÔ ÆäÀÌÁö·Î ÀÌµ¿ÇÏ½Ã°Ú½À´Ï±î?');
+			var result = confirm('íšŒì›ê°€ì… í˜ì´ì§€ë¡œ ì´ë™í•˜ì‹œê² ìŠµë‹ˆê¹Œ?');
 			if(result) {	
 				location.replace('join.html');
 			} else {
@@ -40,8 +40,8 @@
 	});
 </script>
 <body>
-	<div>¾ÆÀÌµğ     	  : <input type="text" id = "id"/></div>
-	<input type="button" id="login" value="·Î±×ÀÎ"/>
-	<input type="button" id="join" value="È¸¿ø°¡ÀÔ"/>
+	<div>ì•„ì´ë””     	  : <input type="text" id = "id"/></div>
+	<input type="button" id="login" value="ë¡œê·¸ì¸"/>
+	<input type="button" id="join" value="íšŒì›ê°€ì…"/>
 </body>
 </html>

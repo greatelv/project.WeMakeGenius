@@ -18,11 +18,19 @@
     font-weight: 400;
 }
 
+@font-face { 
+    font-family: "sindinaru_m";
+    src: url(../fonts/sindinaru_m.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
 /* OVERALL ASPECT */
 
 body {
   background-color: #f2f2f2;
-    font-family: 'Lato', 'NanumBarunGothic';
+    /* font-family: 'Lato', 'NanumBarunGothic'; */
+    font-family: 'sindinaru_m';
     font-weight: 300;
     font-size: 16px;
     color: #555;
@@ -36,7 +44,8 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', 'NanumBarunGothic';
+    /* font-family: 'Lato', 'NanumBarunGothic'; */
+    font-family: 'sindinaru_m';
     font-weight: 300;
     color: #333;
 }

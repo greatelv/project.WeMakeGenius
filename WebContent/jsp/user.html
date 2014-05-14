@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		//USER Table¿¡¼­ data¸¦ ºÒ·¯¿À´Â °æ¿ì
+		//USER Tableì—ì„œ dataë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” ê²½ìš°
 		$('#get').click(function(){
 			$.ajax({
 				url		:	'getuser.jsp',
@@ -17,7 +17,7 @@
 				success	:	function(data){
 					
 					var item = [];
-					//ÇØ´ç row ¸¶´Ù deleteÇÒ¼ö ÀÖµµ·Ï buttonÀ» Ãß°¡ÇÑ´Ù.
+					//í•´ë‹¹ row ë§ˆë‹¤ deleteí• ìˆ˜ ìˆë„ë¡ buttonì„ ì¶”ê°€í•œë‹¤.
 					$.each(data,function(idx, val){
 						item.push( "<li id='" + idx + "'>" 
 								+ val.ID + "|"
@@ -38,7 +38,7 @@
 					    html: item.join( "" )
 					  }).appendTo( "body" );
 					
-					//°¢°¢ÀÇ row¿¡¼­ id°ªÀ» ¹Ş¾Æ¼­ data¸¦ Áö¿ï¼ö ÀÖµµ·Ï ÇÑ´Ù.
+					//ê°ê°ì˜ rowì—ì„œ idê°’ì„ ë°›ì•„ì„œ dataë¥¼ ì§€ìš¸ìˆ˜ ìˆë„ë¡ í•œë‹¤.
 					$("[name|='delete']").click(function(){
 						
 						var id = $(this).attr('id');
@@ -68,7 +68,7 @@
 			});
 		});
 		
-		//post¿¡ °ü·ÃµÈ form¿¡¼­ data¸¦ ÀÔ·ÂÇÒ °æ¿ì µÇ´Â Ã³¸®°úÁ¤
+		//postì— ê´€ë ¨ëœ formì—ì„œ dataë¥¼ ì…ë ¥í•  ê²½ìš° ë˜ëŠ” ì²˜ë¦¬ê³¼ì •
 		$('#post').click(function(){
 			$postid 		= document.getElementById("postid").value;
 			$postname		= document.getElementById("postname").value;
