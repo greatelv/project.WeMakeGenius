@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <title>VISIT</title>
+  <script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#postvisit').click(function(){
+  			$id 			= document.getElementById("id").value;
+  			var json = {"ID":$id};
+  			$.ajax({
+  				url			: 'postvisit.jsp',
+  				type		: "POST",
+  				data		: json,
+  				datatype	: 'json',
+  				
+  				success	: function(datapost){
+					alert(datapost);
+				},
+				error	: function(){
+					console.log('error from postvist');
+				},
+				complete: function(){
+					console.log('complete from postvisit');
+				}
+  			});
+  		});
+  		$('#getvisit').click(function(){
+  			$.ajax({
+  				url			: 'getvisit.jsp',
+  				type		: "POST",
+  				datatype	: 'json',
+  				
+  				success		: function(data){
+  					
+  					var item = [];
+  					$.each(data,function(key, value){
+  						item.push( "<li id='" + key + "'>" 
+								+ value.ID + "|"
+								+ value.LOGINTIME + "|"
+								+ "</li>"
+								+ "<input type = " + "'" + "button" + "'"
+								+ "name = " + "'" + "delete" + "'" 
+								+ "id =" + "'" + val.ID +"'"
+								+ "value = " + "'" + "Delete data" + "'" 
+								+ "/>");
+  					});
+  					
+  					$( "<ul/>", {
+					    "class": "my-new-list",
+					    html: item.join( "" )
+					  }).appendTo( "body" );
+					  console.log('success');
+  				},
+  				error : function(){
+					console.log('error from get');
+				},
+				complete: function(){
+					console.log('complete from get')
+				}
+  			});
+  		});
+  	});
+  </script>
+</head>
+<body>
+	<div>POST VISIT</div>
+	<div>ID     	  : <input type="text" id = "id"/></div>
+	<input type="button" id="postvisit" value="Post Visit"/>
+		
+	<div>GET VISIT</div>
+	<input type="button" id="getvisit" value="Get Data"/>
+</body>
+</html>

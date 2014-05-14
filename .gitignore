@@ -3,4 +3,5 @@
 WebContent/WEB-INF/.gitignore
 .settings/
 .metadata/
+.classpath
 RemoteSystemsTempFiles/.project

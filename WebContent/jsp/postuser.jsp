@@ -13,23 +13,22 @@ JSONArray 	jsona = new JSONArray();
 String ID = request.getParameter("ID");
 String NAME = request.getParameter("NAME");
 String AVATAR = request.getParameter("AVATAR");
-String REG_TIME = request.getParameter("REGISTER_TIME");
 
-//out.print(ID + "," + NAME + "," + AVATAR + "," + REG_TIME);
+
+
 
 try{
 	String driverName = "com.mysql.jdbc.Driver";
 	
 	Class.forName(driverName);
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wmg_dev","wmg","wmg");
-	String sql = "INSERT INTO USER(ID, NAME, AVATAR, REGISTER_TIME) VALUES(?,?,?,?)";
+	Connection con = DriverManager.getConnection("jdbc:mysql://http://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
+	String sql = "INSERT INTO USER(ID, NAME, AVATAR, REGISTER_TIME) VALUES(?,?,?,now())";
 	PreparedStatement ps;
 	
 	ps = con.prepareStatement(sql);
 	ps.setString(1, ID);
 	ps.setString(2, NAME);
 	ps.setString(3, AVATAR);
-	ps.setString(4, REG_TIME);
 	ps.executeUpdate();
 	
 }catch (ClassNotFoundException e){

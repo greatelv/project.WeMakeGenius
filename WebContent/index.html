@@ -1,109 +1,405 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>We Make Genius - 두뇌게임을 즐겨보세요</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<!-- Le styles -->
-<link href="static/css/ext/bootstrap.css" rel="stylesheet">
-<link href="static/css/ext/bootstrap-responsive.css" rel="stylesheet">
+    <title>WeMakeGenius - 두뇌를 향상시키세요!</title>
 
-<!-- 커스텀 스타일 추가 -->
-<link href="static/css/home.css" rel="stylesheet">
-<link href="static/css/navi.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
 
-</head>
+    <!-- Custom styles for this template -->
+    <link href="assets/css/common.css" rel="stylesheet">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/play.css" rel="stylesheet">
+    <link href="assets/css/stats.css" rel="stylesheet">
+    <style>.container {width:970px;}</style>
+  </head>
+ 	
+  <body>
 
-<body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><i class="fa fa-bolt"> We Make Genius</i></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#home" ref="home" class="page-locater">홈</a></li>
+            <li><a href="#play" ref="play" class="page-locater">게임 플레이</a></li>
+            <li><a href="#stats" ref="stats" class="page-locater">통계</a></li>
+            <li><a href="#join" data-toggle="modal" data-target=".join-modal">회원가입</a></li>
+            <li><a href="#login" data-toggle="modal" data-target=".login-modal">로그인</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-	<div class="navbar navbar-static-top">
-		<div class="navbar-inner">
+    <div id="rank-scroll" class="marquee">
+	  <ul>
+        <li>
+        	<span class="rank">1위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">2위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">3위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">4위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">5위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">6위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+        <li>
+        	<span class="rank">7위</span>
+        	<span class="user">전태경 [<b>08109369</b>]</span>
+        	<span class="point">234000점</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="page" id="page_home">
+
+		<div id="hello">
+			<!-- <video id="main-mv" src="assets/video/dock.mp4" width="1903px"  height="582px" autoplay loop></video> --> 
+		    <div class="container">
+		    	<div class="row">
+		    		<div class="col-lg-8 col-lg-offset-2 centered">
+		    			<button type="button" class="btn btn-warning">
+			    			<h1 role="button">Game Play</h1>
+			    			<h2>이곳을 클릭하세요</h2>
+						</button>
+		    		</div><!-- /col-lg-8 -->
+		    	</div><!-- /row -->
+
+
+		    </div> <!-- /container -->
+		</div><!-- /hello -->
+		<div id="green">
 			<div class="container">
-				<button type="button" class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="brand" href="#">We Make Genius</a>
-				<div class="nav-collapse collapse">
-					<ul class="nav pull-right">
-						<li class="active"><a href="#">로그인</a></li>
-						<li><a href="#about">회원가입</a></li>
-						<li><a href="#contact">설정</a></li>
-					</ul>
+				<div class="row">
+					<div class="col-lg-5 centered">
+						<img src="assets/img/06.jpg" alt="" id="home-guide-img">
+					</div>
+					
+					<div class="col-lg-7 centered">
+						<h3>We Make Genius 란?</h3>
+						<p>
+							근력 운동을 하면 근육이 커지듯, 두뇌 운동을 통해 머리를 키워 나간다!
+							인지능력과 기억능력을 향상 시킬 수 있는 좋은 방법!
+						</p>
+						<div>프로젝트 팀원 : 전태경, 정홍은, 이근재</div>
+					</div>
 				</div>
-				<!--/.nav-collapse -->
 			</div>
-		</div>
+		</div>	
 	</div>
 
-	<div class="container" page="home">
-		<!-- Example row of columns -->
-		<div class="row">
-
-			<div class="span6">
-				<h2>게임 고르기</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
-			</div>
-			<div class="span6">
-				<h2>기록 보기</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-					egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus.</p>
-			</div>
+	<div class="page" id="page_play">
+		<div id="game_list_ctr">
+			<ul>
+				<li style="background-image:url(assets/img/game/game1.jpg)" gameId="g1">
+					<button type="button" class="btn btn-info start">Start</button>
+				</li>
+				<li style="background-image:url(assets/img/game/game2.jpg)" gameId="g2">
+					<button type="button" class="btn btn-info start">Start</button>
+				</li>
+				<li>
+					Comming Soon
+				</li>
+			</ul>
 		</div>
+
+		<div id="game_info_ctr">
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 centered">
+						<h1>게임 위에 마우스를 올려보세요.</h1>
+						<p>
+							게임에 대한 설명이 표시됩니다.
+						</p>
+					</div>
+					
+					<div class="col-lg-7 centered">
+						<div class="l"></div>
+					</div>
+				</div>
+			</div>			
+		</div>
+
 	</div>
-	
-	<div class="container" page="games">
-		<!-- Example row of columns -->
-		<div class="row">
 
-			<div class="span6">
-				<h2>게임 고르기</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
-			</div>
-			<div class="span6">
-				<h2>기록 보기</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-					egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus.</p>
-			</div>
+	<div class="page" id="page_stats">
+		<div class="stats-ctn">
+			<h1>전체 순위</h1>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 centered">
+						<h2>숫자비교게임</h2>
+						<table class="table table-striped">
+					      <thead>
+					        <tr>
+					          <th>#</th>
+					          <th>First Name</th>
+					          <th>Last Name</th>
+					          <th>Username</th>
+					        </tr>
+					      </thead>
+					      <tbody>
+					        <tr>
+					          <td>1</td>
+					          <td>Mark</td>
+					          <td>Otto</td>
+					          <td>@mdo</td>
+					        </tr>
+					        <tr>
+					          <td>2</td>
+					          <td>Jacob</td>
+					          <td>Thornton</td>
+					          <td>@fat</td>
+					        </tr>
+					        <tr>
+					          <td>3</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>4</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>5</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>5</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>5</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>5</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					      </tbody>
+					    </table>
+					</div>
+					
+					<div class="col-lg-6 centered">
+						<h2>아이템카운트</h2>
+						<table class="table table-striped">
+					      <thead>
+					        <tr>
+					          <th>#</th>
+					          <th>First Name</th>
+					          <th>Last Name</th>
+					          <th>Username</th>
+					        </tr>
+					      </thead>
+					      <tbody>
+					        <tr>
+					          <td>1</td>
+					          <td>Mark</td>
+					          <td>Otto</td>
+					          <td>@mdo</td>
+					        </tr>
+					        <tr>
+					          <td>2</td>
+					          <td>Jacob</td>
+					          <td>Thornton</td>
+					          <td>@fat</td>
+					        </tr>
+					        <tr>
+					          <td>3</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>4</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>5</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>5</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>5</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					        <tr>
+					          <td>5</td>
+					          <td>Larry</td>
+					          <td>the Bird</td>
+					          <td>@twitter</td>
+					        </tr>
+					      </tbody>
+					    </table>
+					</div>
+				</div>
+			</div>	
+
 		</div>
-	</div>	
-	
-	<footer>
-		<p>&copy; We Make Genius 2014</p>
-	</footer>
-	<!-- /container -->
+		<div class="stats-info">
+			<h1>나의 통계</h1>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 centered">
+						<h2>숫자비교게임</h2>
+						<ul>
+							<li class="play-cnt">플레이 횟수 : <span></span></li>
+							<li class="max-combo">최대 콤보 : <span></span></li>
+							<li class="max-score">최대 점수 : <span></span></li>
+						</ul>
+					</div>
+					
+					<div class="col-lg-6 centered">
+						<h2>아이템카운트</h2>
+						<ul>
+							<li class="play-cnt">플레이 횟수 : <span></span></li>
+							<li class="max-combo">최대 콤보 : <span></span></li>
+							<li class="max-score">최대 점수 : <span></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-	<!-- Le javascript
+		</div>
+
+	</div>
+
+	<!-- 회원가입, 등록 모달-->
+	<div class="modal fade login-modal">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">로그인</h4>
+	      </div>
+	      <div class="modal-body">
+
+	      	<form  role="form">
+			  <div class="form-group">
+			    <label>학번</label>
+			    <input type="id" class="form-control" id="input-login-id" placeholder="학번을 입력하세요">
+			  </div>
+			  <div class="form-group">
+			    <label>비밀번호</label>
+			    <input type="password" class="form-control" id="input-login-pass" placeholder="비밀번호를 입력하세요">
+			  </div>
+			</form>
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-warning" data-dismiss="modal">취소</button>
+	        <button type="button" class="btn btn-primary">로그인</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade join-modal">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">회원가입</h4>
+	      </div>
+	      <div class="modal-body">
+
+	      	<form role="form">
+			  <div class="form-group">
+			    <label>학번</label>
+			    <input type="id" class="form-control" id="input-register-id" placeholder="학번을 입력하세요">
+			  </div>
+			  <div class="form-group">
+			    <label>이름</label>
+			    <input type="name" class="form-control" id="input-register-name" placeholder="이름을 입력하세요">
+			  </div>
+			  <div class="form-group">
+			    <label>비밀번호</label>
+			    <input type="password" class="form-control" id="input-register-pass" placeholder="비밀번호를 입력하세요">
+			  </div>
+			</form>
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-warning" data-dismiss="modal">취소</button>
+	        <button type="button" class="btn btn-primary" id="join">등록</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+
+    <!-- Bootstrap core JavaScript
     ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="static/js/ext/jquery.js"></script>
-	<script src="static/js/ext/bootstrap-transition.js"></script>
-	<script src="static/js/ext/bootstrap-alert.js"></script>
-	<script src="static/js/ext/bootstrap-modal.js"></script>
-	<script src="static/js/ext/bootstrap-dropdown.js"></script>
-	<script src="static/js/ext/bootstrap-scrollspy.js"></script>
-	<script src="static/js/ext/bootstrap-tab.js"></script>
-	<script src="static/js/ext/bootstrap-tooltip.js"></script>
-	<script src="static/js/ext/bootstrap-popover.js"></script>
-	<script src="static/js/ext/bootstrap-button.js"></script>
-	<script src="static/js/ext/bootstrap-collapse.js"></script>
-	<script src="static/js/ext/bootstrap-carousel.js"></script>
-	<script src="static/js/ext/bootstrap-typeahead.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/ext/jquery-1.11.0.js"></script>
+    <script src="assets/js/ext/jquery.scrollbox.js"></script>
+    <script src="assets/js/ext/bootstrap.js"></script>
+    <script src="assets/js/ext/jquery.li-scroller.1.0.js"></script>
+    <script src="assets/js/ext/underscore.js"></script>
+    
 
-</body>
+    <!-- 커스텀 페이지 모듈-->
+    <script src="assets/js/handler.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/play.js"></script>
+    <script src="assets/js/join.js"></script>
+  </body>
 </html>

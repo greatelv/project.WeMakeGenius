@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.js"></script>
+ <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<title>Login</title>
+</head>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#login').click(function(){
+			$id = document.getElementById("id").value; 
+			var json = {"ID":$id};
+			console.log(json);
+			$.ajax({
+				url			: 	'login.jsp',
+				type		:	"POST",
+				data		:	json,
+				datatype	:	'json',
+				success		:	function(result){
+					alert(result);
+				},
+				error	: function(){
+					console.log('error from post');
+				},
+				complete: function(){
+					console.log('complete from post');
+				}
+			});
+		});
+		
+		$('#join').click(function(){
+			var result = confirm('회원가입 페이지로 이동하시겠습니까?');
+			if(result) {	
+				location.replace('join.html');
+			} else {
+				location.replace('login.html');
+			}
+		});
+	});
+</script>
+<body>
+	<div>아이디     	  : <input type="text" id = "id"/></div>
+	<input type="button" id="login" value="로그인"/>
+	<input type="button" id="join" value="회원가입"/>
+</body>
+</html>

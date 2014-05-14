@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<title>회원가입</title>
+</head>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#join').click(function(){
+			$postid 		= document.getElementById("postid").value;
+			$postname		= document.getElementById("postname").value;
+			$postavatar		= document.getElementById("postavatar").value;
+			var json = {"AVATAR":$postavatar,"NAME":$postname,"ID":$postid};
+			console.log(json);
+			$.ajax({
+				url		:	"join.jsp",
+				type	:	"POST",
+				data	:	json,
+				datatype:	"json",
+				
+				success	: function(datapost){
+					alert(datapost);
+				},
+				error	: function(){
+					console.log('error from post');
+				},
+				complete: function(){
+					console.log('complete from post');
+				}
+			});
+		});
+});
+</script>
+<body>
+	<div>회원가입</div>
+	<div>ID     	  : <input type="text" id = "postid"/></div>
+	<div>NAME   	  : <input type="text" id = "postname"/></div> 
+	<div>AVATAR 	  : <input type="text" id = "postavatar"/></div> 
+	
+	<input type="button" id="join" value="Post Data"/>
+</body>
+</html>

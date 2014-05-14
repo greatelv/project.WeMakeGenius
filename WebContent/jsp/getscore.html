@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <title>GetScore</title>
+</head>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#getscore').click(function(){
+			console.log('getscore work');
+			$.ajax({
+				url		: 'getscore.jsp',
+				type	: "POST",
+				datatype: 'json',
+				success : function(data){
+					var item = [];
+					$.each(data,function(idx, val){
+						item.push("<li id='" + idx + "'>" 
+								+ val.SEQUENCE + "|"
+								+ val.ID + "|" 
+								+ val.GAMETYPE +"|" 
+								+ val.SCORE + "|"
+								+ val.STARTTIME + "|"
+								+ val.MAXCOMBO + "|"
+								+ "</li>"
+								+ "<input type = " + "'" + "button" + "'"
+								+ "name = " + "'" + "delete" + "'" 
+								+ "id =" + "'" + val.SEQUENCE +"'"
+								+ "value = " + "'" + "Delete data" + "'" 
+								+ "/>");
+					});
+					
+					$( "<ul/>", {
+					    "class": "my-new-list",
+					    html: item.join( "" )
+					  }).appendTo( "body" );
+				},
+				error : function(){
+					console.log('error from get');
+				},
+				complete: function(){
+					console.log('complete from get')
+				}
+			});
+		});
+	});
+</script>
+<body>
+<div>GET SCORE</div>
+<div id="get"></div>
+<input type="button" id="getscore" value="getscore">
+</body>
+</html>
