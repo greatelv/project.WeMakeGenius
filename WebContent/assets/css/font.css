@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'sindinaru_m';
+    src: url('assets\css\sindinaru_m.eot');
+    src: url('assets\css\sindinaru_m.eot?#iefix') format('embedded-opentype'),
+         assets\css\sindinaru_m.woff') format('woff'),
+         url('assets\css\sindinaru_mDaum_Regular.ttf') format('truetype'),
+         url('assets\css\sindinaru_m') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

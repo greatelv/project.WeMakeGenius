@@ -1,7 +1,6 @@
 <%@page import="org.json.JSONArray"%>
-<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/plain; charset=utf-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="utf-8"%>
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.io.*"%>
@@ -21,8 +20,8 @@ try{
 	String driverName = "com.mysql.jdbc.Driver";
 	
 	Class.forName(driverName);
-	Connection con = DriverManager.getConnection("jdbc:mysql://http://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
-	String sql = "INSERT INTO PLAY(USER_ID, GAME_TYPE, SCORE, START_TIME, MAX_COMBO) VALUES(?,?,?,now(),?)";
+	Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
+	String sql = "INSERT INTO play(USER_ID, GAME_TYPE, SCORE, START_TIME, MAX_COMBO) VALUES(?,?,?,now(),?)";
 	PreparedStatement ps;
 	
 	ps = con.prepareStatement(sql);
@@ -38,6 +37,6 @@ try{
 }catch (SQLException e){
 	e.printStackTrace();
 }finally{
-	out.println("scoreÀÔ·Â ¿Ï·á");	
+	out.println("scoreìž…ë ¥ ì™„ë£Œ");	
 }
 %>
