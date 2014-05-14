@@ -1,5 +1,4 @@
 <%@page import="org.json.JSONArray"%>
-<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/plain; charset=utf-8"
 	pageEncoding="EUC-KR"%>
 <%@page import="org.json.simple.JSONObject"%>
