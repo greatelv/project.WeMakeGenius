@@ -1,4 +1,5 @@
-/build
+.project
+.classpath
 WebContent/WEB-INF/.gitignore
 .settings/
 .metadata/
