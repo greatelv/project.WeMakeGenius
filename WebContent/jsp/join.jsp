@@ -12,7 +12,6 @@ String ID = request.getParameter("ID");
 String NAME = request.getParameter("NAME");
 String AVATAR = request.getParameter("AVATAR");
 String message = "";
-String error = "회원가입이 정상적으로 완료되었습니다.";
 int result = 1;
 
 try{
