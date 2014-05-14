@@ -11,8 +11,8 @@ $(document).ready(function(){
 	$('#join').click(function(){
 			$postid 		= document.getElementById("postid").value;
 			$postname		= document.getElementById("postname").value;
-			$postavatar		= document.getElementById("postavatar").value;
-			var json = {"AVATAR":$postavatar,"NAME":$postname,"ID":$postid};
+			
+			var json = {"NAME":$postname,"ID":$postid};
 			console.log(json);
 			$.ajax({
 				url		:	"join.jsp",
@@ -37,7 +37,6 @@ $(document).ready(function(){
 	<div>회원가입</div>
 	<div>ID     	  : <input type="text" id = "postid"/></div>
 	<div>NAME   	  : <input type="text" id = "postname"/></div> 
-	<div>AVATAR 	  : <input type="text" id = "postavatar"/></div> 
 	
 	<input type="button" id="join" value="Post Data"/>
 </body>

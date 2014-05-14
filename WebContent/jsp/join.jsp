@@ -10,7 +10,7 @@
 
 String ID = request.getParameter("ID");
 String NAME = request.getParameter("NAME");
-String AVATAR = request.getParameter("AVATAR");
+
 String message = "";
 int result = 1;
 
@@ -19,13 +19,13 @@ try{
 	
 	Class.forName(driverName);
 	Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
-	String sql = "INSERT INTO user(ID, NAME, AVATAR, REGISTER_TIME) VALUES(?,?,?,now())";
+	String sql = "INSERT INTO user(ID, NAME, REGISTER_TIME) VALUES(?,?,now())";
 	PreparedStatement ps;
 	
 	ps = con.prepareStatement(sql);
 	ps.setString(1, ID);
 	ps.setString(2, NAME);
-	ps.setString(3, AVATAR);
+
 	ps.executeUpdate();
 	
 	message = "회원가입이 정상적으로 완료되었습니다.";
