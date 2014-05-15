@@ -42,7 +42,6 @@ $(function UserHandler() {
 	$('#join').click(function(){
 		var postid = document.getElementById("input-register-id").value;
 		var postname = document.getElementById("input-register-name").value;
-		alert(postid +" 님 회원가입을 시도중입니다.");
 		var json = {"NAME":postname,"ID":postid};
 		console.log(json);
 		$.ajax({
@@ -52,7 +51,13 @@ $(function UserHandler() {
 			datatype:	"json",
 			
 			success	: function(result){
-				console.log(result);
+				var jsonObject = JSON.parse(result);
+				if (jsonObject.result == 0) {
+					alert("회원가입에 실패 했습니다. 이유 : " + jsonObject.message);
+				} else {
+					alert("회원가입을 성공했습니다. 로그인 해 주세요.");
+					$('#register').modal('hide')
+				}
 			},
 			error	: function(){
 				console.log('error from post');
@@ -62,6 +67,7 @@ $(function UserHandler() {
 			}
 		});
 	});
+	
 	
 	//로그인
 	$('#login').click(function(){

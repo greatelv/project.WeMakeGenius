@@ -11,6 +11,8 @@
 String ID = request.getParameter("ID");
 String NAME = request.getParameter("NAME");
 
+System.out.println("NAME : "+NAME);
+
 String message = "";
 int result = 1;
 
@@ -18,7 +20,7 @@ try{
 	String driverName = "com.mysql.jdbc.Driver";
 	
 	Class.forName(driverName);
-	Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
+	Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8","wmg","wmg");
 	String sql = "INSERT INTO user(ID, NAME, REGISTER_TIME) VALUES(?,?,now())";
 	PreparedStatement ps;
 	
