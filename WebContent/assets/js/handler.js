@@ -1,4 +1,7 @@
-//메인 초기화
+/**
+ * Handler Module
+ */
+
 //페이지간의 전환
 $(function GnbHandler() {
 
@@ -30,5 +33,63 @@ $(function HomeHandler() {
 	$('#hello button').click(function(){
 		$('.page-locater[ref="play"]').trigger('click');
 	});
-
 });
+
+//유저 관련 핸들러
+$(function UserHandler() {
+	
+	//회원가입
+	$('#join').click(function(){
+		var postid = document.getElementById("input-register-id").value;
+		var postname = document.getElementById("input-register-name").value;
+		alert(postid +" 님 회원가입을 시도중입니다.");
+		var json = {"NAME":postname,"ID":postid};
+		console.log(json);
+		$.ajax({
+			url		:	"jsp/join.jsp",
+			type	:	"POST",
+			data	:	json,
+			datatype:	"json",
+			
+			success	: function(result){
+				console.log(result);
+			},
+			error	: function(){
+				console.log('error from post');
+			},
+			complete: function(){
+				console.log('complete from post');
+			}
+		});
+	});
+	
+	//로그인
+	$('#login').click(function(){
+		var id = document.getElementById("input-login-id").value;
+		
+		$.ajax({
+			url		:	"jsp/login.jsp?ID="+id,
+			type	:	"GET",
+			data	:	json,
+			datatype:	"json",
+			success	: function(res){
+				var result = JSON.parse(res);
+				
+				if(result == 1){
+					alert('환영합니다.');
+				}else{
+					alert('로그인에 실패하였습니다.');
+				}
+				
+				console.log(result);
+			},
+			error	: function(){
+				console.log('error from get');
+			},
+			complete: function(){
+				console.log('complete from get');
+			}
+		});
+	});
+});
+
