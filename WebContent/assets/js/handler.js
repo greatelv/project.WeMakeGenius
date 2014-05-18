@@ -56,7 +56,7 @@ $(function UserHandler() {
 					alert("회원가입에 실패 했습니다. 이유 : " + jsonObject.message);
 				} else {
 					alert("회원가입을 성공했습니다. 로그인 해 주세요.");
-					$('#register').modal('hide')
+					$('#register').modal('hide');
 				}
 			},
 			error	: function(){
@@ -74,26 +74,25 @@ $(function UserHandler() {
 		var id = document.getElementById("input-login-id").value;
 		
 		$.ajax({
-			url		:	"jsp/login.jsp?ID="+id,
+			url		:	"jsp/login.jsp?id="+id,
 			type	:	"GET",
-			data	:	json,
 			datatype:	"json",
 			success	: function(res){
-				var result = JSON.parse(res);
+				var jsonr = JSON.parse(res);
 				
-				if(result == 1){
+				if(jsonr.result == 1){
 					alert('환영합니다.');
+					
+					//세션 처리
+					sessionStorage.setItem("id", id);
+					$('.login-modal').modal('hide');
+					
 				}else{
 					alert('로그인에 실패하였습니다.');
 				}
-				
-				console.log(result);
 			},
 			error	: function(){
 				console.log('error from get');
-			},
-			complete: function(){
-				console.log('complete from get');
 			}
 		});
 	});
