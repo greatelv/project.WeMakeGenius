@@ -2,10 +2,12 @@
 .ellipsis { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .marquee { overflow: auto; white-space: nowrap; overflow-x: -webkit-marquee; -webkit-marquee: backwards 1px infinite scroll 23; }
 .page{
-    margin-top: 90px;
 	background: url(../img/ns_bg.jpg);
     overflow: hidden;
-    /* height: 865px; */
+    
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 
 .container { width:970px !important; }
