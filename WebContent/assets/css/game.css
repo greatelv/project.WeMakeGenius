@@ -4,8 +4,8 @@
 
 .game-info-header {
 	position: absolute;
-	top: 5%;
-	width: 671px;
+	top: 12%;
+	width: 705px;
 	left: 0px;
 	right: 0px;
 	margin-right: auto;
@@ -34,6 +34,7 @@
 	font-size: 45pt;
 	left: 10px;
 	line-height: 26px;
+	width: 105px;
 }
 
 #score{
