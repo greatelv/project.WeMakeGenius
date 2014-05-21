@@ -62,21 +62,49 @@
 }
 
 /*숫자대소비교 게임 스타일*/
-#game_cn{}
+#game_g1{
+    width: 100%;
+    height: 100%;
+}
 
-#game_cn .question{}
+#game_g1 .question{
+    position: absolute;
+    top: 35%;
+    font-size: 100pt;
+    width: 670px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-#game_cn .question .left-num{}
+#game_g1 .question .left-num{
+    display: inline-block;
+    float: left;
+}
 
-#game_cn .question .right-num{}
+#game_g1 .question .right-num{
+    display: inline-block;
+    float: right;
+}
 
-#game_cn .question .blank{}
+#game_g1 .question .blank{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: gray;
+    border-radius: 50%;
+    top: -12px;
+    position: relative;
+    line-height: 200px;
+    color: #eee;
+}
 
-#game_cn .question .option{}
+#game_g1 .question .option{}
 
-#game_cn .question .option .opt1{}
+#game_g1 .question .option .opt1{}
 
-#game_cn .question .option .opt2{}
+#game_g1 .question .option .opt2{}
 
-#game_cn .question .option .opt3{}
+#game_g1 .question .option .opt3{}
 
