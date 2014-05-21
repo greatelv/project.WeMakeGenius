@@ -4,7 +4,7 @@
 
 .game-info-header {
 	position: absolute;
-	top: 12%;
+	top: 17%;
 	width: 705px;
 	left: 0px;
 	right: 0px;
@@ -69,7 +69,7 @@
 
 #game_g1 .question{
     position: absolute;
-    top: 35%;
+    top: 40%;
     font-size: 100pt;
     width: 670px;
     left: 0;
