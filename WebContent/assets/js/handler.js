@@ -81,11 +81,17 @@ $(function UserHandler() {
 				var jsonr = JSON.parse(res);
 				
 				if(jsonr.result == 1){
-					alert('환영합니다.');
+					alert(jsonr.name+'님 환영합니다.');
+
+					sessionStorage.removeItem('id');
+					sessionStorage.removeItem('name');
 					
-					//세션 처리
 					sessionStorage.setItem("id", id);
+					sessionStorage.setItem("name", jsonr.name);
+
 					$('.login-modal').modal('hide');
+
+					onSession();
 					
 				}else{
 					alert('로그인에 실패하였습니다.');

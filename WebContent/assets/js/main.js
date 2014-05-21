@@ -6,4 +6,8 @@ $(function () {
 	  delay: 0,
 	  speed: 100
 	});
+	
+	onSession();
 });
+
+

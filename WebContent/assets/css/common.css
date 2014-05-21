@@ -21,3 +21,17 @@
 	width: 100%;
 }
 
+
+.session-on{
+    line-height: 52px;
+    left: 44px;
+    color: cadetblue;
+}
+
+#logout{
+    font-size: 20px;
+    top: 4px;
+    left: 7px;
+    color: chocolate;
+    cursor: pointer;
+}
