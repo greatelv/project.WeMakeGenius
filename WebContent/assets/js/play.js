@@ -31,7 +31,20 @@ $(function () {
     $('#game_list_ctr').find('button').click(function(){
         $('.page').hide();
         $('#page_games').show();
-
+        
+        setTimeout(function(){
+        	$("#start_message").html("<img src='assets/img/game/img_ready.png'></img>");
+        	
+        	setTimeout(function(){
+        		$("#start_message").html("<img src='assets/img/game/img_go.png'></img>");
+        		
+        		setTimeout(function(){
+            		$("#start_message").html("");
+            	}, 1000);
+        		
+        	}, 1500);
+        	
+        }, 500);
     });
 });
 

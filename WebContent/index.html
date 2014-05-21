@@ -27,8 +27,8 @@
 
 <body>
 	<!-- Main Audio -->
-	<audio id="main_audio" class="main_audio" autoplay loop> 
-   		<source src="assets/sound/BT_main.mp3" type="audio/mpeg"/>
+	<audio id="main_audio" class="main_audio" autoplay loop>
+		<source src="assets/sound/BT_main.mp3" type="audio/mpeg" />
 	</audio>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-default navbar-fixed-top">
@@ -36,7 +36,7 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span>
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#"><i class="fa fa-bolt"> We
@@ -46,7 +46,8 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="#home" ref="home"
 						class="page-locater">홈</a></li>
-					<li><a href="#play" id="game_play_menu" ref="play" class="page-locater">게임 플레이</a></li>
+					<li><a href="#play" id="game_play_menu" ref="play"
+						class="page-locater">게임 플레이</a></li>
 					<li><a href="#stats" ref="stats" class="page-locater">통계</a></li>
 					<li><a href="#join" data-toggle="modal"
 						data-target=".join-modal">회원가입</a></li>
@@ -84,7 +85,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-8 col-xs-offset-2 centered">
-						<button type="button" id="game_play_home" class="btn btn-warning start-game">
+						<button type="button" id="game_play_home"
+							class="btn btn-warning start-game">
 							<h1 role="button">Game Play</h1>
 							<h2>이곳을 클릭하세요</h2>
 						</button>
@@ -128,8 +130,7 @@
 					<button type="button" class="btn btn-info start">Start</button>
 				</li>
 				<li style="background-image: url(assets/img/game/game3.png)"
-					gameId="g3">
-				</li>
+					gameId="g3"></li>
 			</ul>
 		</div>
 
@@ -285,9 +286,11 @@
 		</div>
 
 	</div>
-	
+
 	<!-- 실제 게임 페이지 -->
-	<div class="page" id="page_games">
+	<div class="page" id="page_games"
+		style="text-align: center; margin-top: 77px;">
+		<div id="start_message" style="margin-top: 100px;">게임메세지 나오는 부분</div>
 	</div>
 
 	<!-- 회원가입, 등록 모달-->
@@ -363,9 +366,7 @@
 						aria-hidden="true">&times;</button>
 					<h4 class="modal-title">로그아웃</h4>
 				</div>
-				<div class="modal-body">
-					현재 접속된 계정을 로그아웃 하시겠습니까?
-				</div>
+				<div class="modal-body">현재 접속된 계정을 로그아웃 하시겠습니까?</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning" data-dismiss="modal">취소</button>
 					<button type="button" class="btn btn-primary" id="logout-btn">확인</button>
@@ -396,5 +397,7 @@
 	<script src="assets/js/user.js"></script>
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/bgm.js"></script>
+	<script src="assets/js/game.js"></script>
+
 </body>
 </html>
