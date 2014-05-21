@@ -56,3 +56,27 @@
     position: relative;
     top: 30%;
 }
+
+.play-ground{
+	display: none;
+}
+
+/*숫자대소비교 게임 스타일*/
+#game_cn{}
+
+#game_cn .question{}
+
+#game_cn .question .left-num{}
+
+#game_cn .question .right-num{}
+
+#game_cn .question .blank{}
+
+#game_cn .question .option{}
+
+#game_cn .question .option .opt1{}
+
+#game_cn .question .option .opt2{}
+
+#game_cn .question .option .opt3{}
+

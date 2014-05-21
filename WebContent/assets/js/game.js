@@ -28,7 +28,7 @@ var game = function(){
 
 	return {
 
-		readyGo : function(){	//레디고 출력
+		readyGo : function(callback){	//레디고 출력
 
 			$('.page').hide();
 		    $('#page_games').show();
@@ -40,11 +40,12 @@ var game = function(){
 		    	setTimerArray.push(setTimeout(function(){
 		    		$("#start_message").html("<img src='assets/img/game/img_go.png'></img>");
 		    		
-		    		setTimerArray(setTimeout(function(){
+		    		setTimerArray.push(setTimeout(function(){
 		        		$("#start_message").empty();
 						$('.game-info-header').show();
 
 		        		game.runTimer();
+		        		callback && callback();
 
 		        	}, 1000));
 		    		
@@ -91,11 +92,34 @@ var game = function(){
 
 			elem.gameHeader.hide();
 			elem.progess.stop().width(0)
-			_elem.timer.text(10);
+			elem.timer.text(10);
 
 			$.each(setTimerArray, function(idx, item){
 				item.clearTimeout();
 			});
+		}
+	}
+}();
+
+
+//숫자 대소비교 게임 인스턴스
+var game1 = function(){
+
+	var _this = $('#game_g1');
+
+	var elem = {
+		question : _this.find('.question'),
+		leftNum :  _this.find('.left-num'),
+		rightNum :  _this.find('.right-num'),
+		option : 	_this.find('.option')
+	}
+
+	return{
+		init : function(){
+			_this.show();
+		},
+		playSet : function(){
+
 		}
 	}
 }();

@@ -13,11 +13,6 @@ $(function () {
     		return item.id == curElem.attr('gameId');
     	});
 
-
-
-    	$('#game_info_ctr h1').text(curMeta.title);
-    	$('#game_info_ctr p').text(curMeta.desc);
-    	
     	$('#game_info_ctr')
     		.css('background-image', 'url(./assets/img/intention/'+curMeta.id+'.gif)')
     		.css('background-color', curMeta.guideColor);
@@ -27,9 +22,19 @@ $(function () {
     	$(this).children('button').fadeOut();
   	});
 
+
     //게임시작버튼 클릭
     $('#game_list_ctr').find('button').click(function(){
-        game.readyGo();
+
+        var curElem = $(this).parent('li');
+        var curGameId = curElem.attr('gameId');
+
+        console.log('curGameIdcurGameId : '+curGameId);
+        game.readyGo(function(){
+            if(curGameId == 'g1'){
+                game1.init();
+            }
+        });
     });
 });
 
