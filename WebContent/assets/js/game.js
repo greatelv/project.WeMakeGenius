@@ -3,7 +3,7 @@ var game = function(){
 
 	//필요한 엘리먼트 캐싱
 	var elem = {
-		this : 			$('#page_games'),
+		This : 			$('#page_games'),
 		score : 		$('#score'),
 		startMessge : 	$('#start_message'),
 		gameHeader : 	$('.game-info-header')
