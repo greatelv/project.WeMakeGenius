@@ -9,7 +9,6 @@ $(function () {
 	
 	onSession();
 	
-	$(".main_audio").trigger('load');
 });
 
 
