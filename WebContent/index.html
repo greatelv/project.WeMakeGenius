@@ -27,9 +27,9 @@
 </head>
 
 <body>
+<input type="button" onclick="test_alert();" value="2초후 알림" style="position: absolute; up:100px;">
 	<!-- Main Audio -->
-	<audio id="main_audio" class="main_audio" autoplay loop>
-		<source src="assets/sound/BT_main.mp3" type="audio/mpeg" />
+	<audio id="main_audio" class="main_audio" autoplay loop="true" src="assets/sound/BT_main.mp3">
 	</audio>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-default navbar-fixed-top">
@@ -45,7 +45,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#home" ref="home"
+					<li class="active"><a href="#home" id="home_menu" ref="home"
 						class="page-locater">홈</a></li>
 					<li><a href="#play" id="game_play_menu" ref="play"
 						class="page-locater">게임 플레이</a></li>
@@ -124,11 +124,11 @@
 			<ul>
 				<li style="background-image: url(assets/img/game/game1.png)"
 					gameId="g1">
-					<button type="button" class="btn btn-info start">Start</button>
+					<button type="button" id="number_compare" class="btn btn-info start">Start</button>
 				</li>
 				<li style="background-image: url(assets/img/game/game2.png)"
 					gameId="g2">
-					<button type="button" class="btn btn-info start">Start</button>
+					<button type="button" id="count_number" class="btn btn-info start">Start</button>
 				</li>
 				<li style="background-image: url(assets/img/game/game3.png)"
 					gameId="g3"></li>
@@ -335,6 +335,7 @@
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/bgm.js"></script>
 	<script src="assets/js/game.js"></script>
+	<script src="assets/js/util.js"></script>
 
 
 	<!-- 회원가입, 등록 모달-->

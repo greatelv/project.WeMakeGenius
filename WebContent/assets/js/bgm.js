@@ -1,17 +1,27 @@
 $(function bgm() {
-	//게임플레이 화면으로 넘어가는 버튼
-	$('#game_play_home').click(function(){
+	//게임 실행시 나오는 ready~go~!통제
+	//숫자비교게임
+	$('#number_compare').click(function(){
 		$(".main_audio").trigger('pause');
 		
-		var new_audio = "assets/sound/game.mp3";
+		var new_audio = "assets/sound/ready.mp3";
+		var loop = "false";
 		main_audio = $('#main_audio').attr("src",new_audio)[0];
-		audio_core.play();
+		main_audio = $('#main_audio').attr("loop",loop)[0];
+		
 	});
-	$('#game_play_menu').click(function(){
+	
+	//사진 숫자 맞추기 게임
+	$('#count_number').click(function(){
 		$(".main_audio").trigger('pause');
 		
-		var new_audio = "assets/sound/game.mp3";
+		var new_audio = "assets/sound/ready.mp3";
+		var loop = "false";
+		
 		main_audio = $('#main_audio').attr("src",new_audio)[0];
-		audio_core.play();
+		main_audio = $('#main_audio').attr("loop",loop)[0];
+		
 	});
+	
+	//통계화면으로 돌아갈때
 });
