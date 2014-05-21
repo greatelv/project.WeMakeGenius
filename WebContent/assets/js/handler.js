@@ -102,5 +102,9 @@ $(function UserHandler() {
 			}
 		});
 	});
+	
+	$('#logout-btn').click(function(){
+		outSession();
+	});
 });
 
