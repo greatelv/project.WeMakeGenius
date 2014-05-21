@@ -18,6 +18,7 @@
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="assets/css/play.css" rel="stylesheet">
 <link href="assets/css/stats.css" rel="stylesheet">
+<link href="assets/css/game.css" rel="stylesheet">
 <style>
 .container {
 	width: 970px;
@@ -159,6 +160,21 @@
 		</div>
 	</div>
 
+	<!-- 실제 게임 페이지 -->
+	<div class="page" id="page_games"
+		style="text-align: center; margin-top: 77px;">
+		<div class="game-info-header">
+			<div id="timer">10</div>
+			<div id="timeline">
+				<div id="timeline-progress"></div>
+			</div>
+			<div id="score">100 Point</div>
+		</div>
+
+		<div id="start_message" style="margin-top: 100px;">게임메세지 나오는 부분</div>
+	</div>
+
+
 	<div class="page" id="page_stats">
 		<div class="stats-ctn">
 			<h1>Top5 순위</h1>
@@ -287,11 +303,28 @@
 
 	</div>
 
-	<!-- 실제 게임 페이지 -->
-	<div class="page" id="page_games"
-		style="text-align: center; margin-top: 77px;">
-		<div id="start_message" style="margin-top: 100px;">게임메세지 나오는 부분</div>
-	</div>
+	
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/ext/jquery-1.11.0.js"></script>
+	<script src="assets/js/ext/jquery.scrollbox.js"></script>
+	<script src="assets/js/ext/bootstrap.js"></script>
+	<script src="assets/js/ext/jquery.li-scroller.1.0.js"></script>
+	<script src="assets/js/ext/underscore.js"></script>
+
+
+	<!-- 커스텀 페이지 모듈-->
+	<script src="assets/js/static.js"></script>
+	<script src="assets/js/handler.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/play.js"></script>
+	<script src="assets/js/user.js"></script>
+	<script src="assets/js/header.js"></script>
+	<script src="assets/js/bgm.js"></script>
+	<script src="assets/js/game.js"></script>
+
 
 	<!-- 회원가입, 등록 모달-->
 	<div class="modal fade login-modal">
@@ -378,26 +411,6 @@
 	</div>
 	<!-- /.modal -->
 
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="assets/js/ext/jquery-1.11.0.js"></script>
-	<script src="assets/js/ext/jquery.scrollbox.js"></script>
-	<script src="assets/js/ext/bootstrap.js"></script>
-	<script src="assets/js/ext/jquery.li-scroller.1.0.js"></script>
-	<script src="assets/js/ext/underscore.js"></script>
-
-
-	<!-- 커스텀 페이지 모듈-->
-	<script src="assets/js/static.js"></script>
-	<script src="assets/js/handler.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/play.js"></script>
-	<script src="assets/js/user.js"></script>
-	<script src="assets/js/header.js"></script>
-	<script src="assets/js/bgm.js"></script>
-	<script src="assets/js/game.js"></script>
-
+	
 </body>
 </html>
