@@ -17,6 +17,8 @@ var game = function(){
 	var point = 0;
 	var combo = 0;
 
+	var limitSec = 60;
+	
 	var sycPoint = function(){
 		elem.score.text(point+' Point');
 	};
@@ -25,7 +27,9 @@ var game = function(){
 	var setTimerArray = [];
 
 	return {
+
 		readyGo : function(){	//레디고 출력
+
 			$('.page').hide();
 		    $('#page_games').show();
 		    $('#rank-scroll').hide();
@@ -49,9 +53,8 @@ var game = function(){
 		    }, 500));
 		},
 		runTimer : function(){ //타이머 출력
-			var limitSec = 10;
+			
 			var duration = 1000 * limitSec;
-
 			
 			elem.progess.stop().width(0).animate({
 				width: '600px',
