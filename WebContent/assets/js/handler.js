@@ -18,8 +18,9 @@ $(function GnbHandler() {
 		$('.page-locater').parent('li').removeClass('active');
 		$(this).parent('li').addClass('active');
 
-		//alert('targetRef : '+targetRef);
-	})
+		//게임 진행중에 나왔을 시 기존 게임 컨테이너 clear
+		game.clearGame();
+	});
 
 	//순위 정보 Marquee
 	$("#rank-scroll > ul").liScroll({travelocity: 0.13});
