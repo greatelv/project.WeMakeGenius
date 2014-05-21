@@ -4,12 +4,13 @@
 
 .game-info-header {
 	position: absolute;
-	top: 15%;
+	top: 5%;
 	width: 671px;
 	left: 0px;
 	right: 0px;
 	margin-right: auto;
 	margin-left: auto;
+	display: none;
 }
 
 #timeline {
@@ -29,16 +30,15 @@
 #timer {
 	position: relative;
 	display: inline-block;
-	float: left;
+	float: right;
 	font-size: 45pt;
-	left: -28px;
+	left: 10px;
 	line-height: 26px;
 }
 
 #score{
     display: block;
-	
-    font-size: 40pt;
+    font-size: 30pt;
     position: absolute;
     float: right;
     width: 310px;
@@ -49,4 +49,9 @@
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#start_message{
+    position: relative;
+    top: 30%;
 }
