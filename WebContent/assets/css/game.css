@@ -1,0 +1,57 @@
+#page_games {
+	text-align: center;
+}
+
+.game-info-header {
+	position: absolute;
+	top: 5%;
+	width: 671px;
+	left: 0px;
+	right: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	display: none;
+}
+
+#timeline {
+	position: relative;
+	width: 600px;
+	height: 21px;
+	background: #000;
+	float: left;
+}
+
+#timeline-progress {
+	width: 0px;
+	height: 21px;
+	background: url(../img/game/img_time_yellow.png);
+}
+
+#timer {
+	position: relative;
+	display: inline-block;
+	float: right;
+	font-size: 45pt;
+	left: 10px;
+	line-height: 26px;
+}
+
+#score{
+    display: block;
+    font-size: 30pt;
+    position: absolute;
+    float: right;
+    width: 310px;
+    top: 25px;
+    text-align: center;
+    color: brown;  
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#start_message{
+    position: relative;
+    top: 30%;
+}

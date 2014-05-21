@@ -11,6 +11,7 @@
     position: absolute;
     top: 20%;
     text-align: center;
+    width: 1920px;
 }
 
 #game_list_ctr > ul > li{
