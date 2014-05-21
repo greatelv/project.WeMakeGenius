@@ -4,8 +4,8 @@
 
 .game-info-header {
 	position: absolute;
-	top: 20%;
-	width: 680px;
+	top: 15%;
+	width: 671px;
 	left: 0px;
 	right: 0px;
 	margin-right: auto;
@@ -26,10 +26,27 @@
 	background: url(../img/game/img_time_yellow.png);
 }
 
-#score {
+#timer {
 	position: relative;
 	display: inline-block;
-	float: right;
+	float: left;
 	font-size: 45pt;
+	left: -28px;
 	line-height: 26px;
+}
+
+#score{
+    display: block;
+	
+    font-size: 40pt;
+    position: absolute;
+    float: right;
+    width: 310px;
+    top: 25px;
+    text-align: center;
+    color: brown;  
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
