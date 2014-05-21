@@ -5,9 +5,9 @@ $(function bgm() {
 		$(".main_audio").trigger('pause');
 		
 		var new_audio = "assets/sound/ready.mp3";
-		var loop = "false";
+		
 		main_audio = $('#main_audio').attr("src",new_audio)[0];
-		main_audio = $('#main_audio').attr("loop",loop)[0];
+		main_audio = $('#main_audio').attr("loop",false)[0];
 		
 	});
 	
@@ -16,10 +16,9 @@ $(function bgm() {
 		$(".main_audio").trigger('pause');
 		
 		var new_audio = "assets/sound/ready.mp3";
-		var loop = "false";
 		
 		main_audio = $('#main_audio').attr("src",new_audio)[0];
-		main_audio = $('#main_audio').attr("loop",loop)[0];
+		main_audio = $('#main_audio').attr("loop",false)[0];
 		
 	});
 	
