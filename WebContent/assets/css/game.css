@@ -1,0 +1,35 @@
+#page_games {
+	text-align: center;
+}
+
+.game-info-header {
+	position: absolute;
+	top: 20%;
+	width: 680px;
+	left: 0px;
+	right: 0px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#timeline {
+	position: relative;
+	width: 600px;
+	height: 21px;
+	background: #000;
+	float: left;
+}
+
+#timeline-progress {
+	width: 0px;
+	height: 21px;
+	background: url(../img/game/img_time_yellow.png);
+}
+
+#score {
+	position: relative;
+	display: inline-block;
+	float: right;
+	font-size: 45pt;
+	line-height: 26px;
+}

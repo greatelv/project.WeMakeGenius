@@ -18,6 +18,7 @@
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="assets/css/play.css" rel="stylesheet">
 <link href="assets/css/stats.css" rel="stylesheet">
+<link href="assets/css/game.css" rel="stylesheet">
 <style>
 .container {
 	width: 970px;
@@ -125,8 +126,7 @@
 					<button type="button" class="btn btn-info start">Start</button>
 				</li>
 				<li style="background-image: url(assets/img/game/game3.png)"
-					gameId="g3">
-				</li>
+					gameId="g3"></li>
 			</ul>
 		</div>
 
@@ -153,6 +153,18 @@
 					</div> -->
 			</div>
 		</div>
+	</div>
+
+	<!-- 실제 게임 페이지 -->
+	<div class="page" id="page_games">
+		<div class="game-info-header">
+			<div id="timeline">
+				<div id="timeline-progress"></div>
+			</div>
+			<div id="score">10</div>
+		</div>
+
+
 	</div>
 
 	<div class="page" id="page_stats">
@@ -280,12 +292,27 @@
 			</div>
 
 		</div>
+	</div>
 
-	</div>
-	
-	<!-- 실제 게임 페이지 -->
-	<div class="page" id="page_games">
-	</div>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/ext/jquery-1.11.0.js"></script>
+	<script src="assets/js/ext/jquery.scrollbox.js"></script>
+	<script src="assets/js/ext/bootstrap.js"></script>
+	<script src="assets/js/ext/jquery.li-scroller.1.0.js"></script>
+	<script src="assets/js/ext/underscore.js"></script>
+
+
+	<!-- 커스텀 페이지 모듈-->
+	<script src="assets/js/static.js"></script>
+	<script src="assets/js/handler.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/play.js"></script>
+	<script src="assets/js/game.js"></script>
+	<script src="assets/js/user.js"></script>
+	<script src="assets/js/header.js"></script>
+
 
 	<!-- 회원가입, 등록 모달-->
 	<div class="modal fade login-modal">
@@ -360,9 +387,7 @@
 						aria-hidden="true">&times;</button>
 					<h4 class="modal-title">로그아웃</h4>
 				</div>
-				<div class="modal-body">
-					현재 접속된 계정을 로그아웃 하시겠습니까?
-				</div>
+				<div class="modal-body">현재 접속된 계정을 로그아웃 하시겠습니까?</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning" data-dismiss="modal">취소</button>
 					<button type="button" class="btn btn-primary" id="logout-btn">확인</button>
@@ -375,22 +400,10 @@
 	<!-- /.modal -->
 
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="assets/js/ext/jquery-1.11.0.js"></script>
-	<script src="assets/js/ext/jquery.scrollbox.js"></script>
-	<script src="assets/js/ext/bootstrap.js"></script>
-	<script src="assets/js/ext/jquery.li-scroller.1.0.js"></script>
-	<script src="assets/js/ext/underscore.js"></script>
 
 
-	<!-- 커스텀 페이지 모듈-->
-	<script src="assets/js/static.js"></script>
-	<script src="assets/js/handler.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/play.js"></script>
-	<script src="assets/js/user.js"></script>
-	<script src="assets/js/header.js"></script>
+
+
+
 </body>
 </html>
