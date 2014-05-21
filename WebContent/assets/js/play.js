@@ -26,6 +26,13 @@ $(function () {
   	}, function() {
     	$(this).children('button').fadeOut();
   	});
+
+
+    $('#game_list_ctr').find('button').click(function(){
+        $('.page').hide();
+        $('#page_games').show();
+
+    });
 });
 
 
