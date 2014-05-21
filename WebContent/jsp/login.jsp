@@ -7,6 +7,8 @@
 <%
 	String id = request.getParameter("id");
 	String message = "";
+	String correct_id = "";
+	String name = "";
 	int result = 0;
 	int rowCnt = 0;
 
@@ -23,17 +25,21 @@
 						"wmg", "wmg");
 		PreparedStatement ps;
 		Statement stat = con.createStatement();
-		ResultSet rs = stat.executeQuery("select COUNT(*) as total from user where ID = '"+ id + "'");
+		ResultSet rs = stat.executeQuery("select ID, NAME from user where ID = '"+ id + "'");
 
 		while (rs.next()) {
-			rowCnt = rs.getInt("total");
+			name = rs.getString("NAME");
+			correct_id = rs.getString("ID");
 		}
 
-		if (rowCnt == 0) {
+		if ( correct_id.equals(null)) {
 			message = "해당 아이디가 존재하지 않습니다.";
 			result = 0;
 		} else {
 			result = 1;
+			correct_id = id;
+			jsono.put("id",correct_id);
+			jsono.put("name",name);
 		}
 
 	} catch (ClassNotFoundException e) {

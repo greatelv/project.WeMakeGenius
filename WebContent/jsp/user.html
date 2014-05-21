@@ -14,15 +14,14 @@
 				url		:	'getuser.jsp',
 				type	:	"POST",
 				dataType:	'json',
-				success	:	function(data){
-					
+				success	:	function(dataget){
+					console.log(dataget);
 					var item = [];
 					//해당 row 마다 delete할수 있도록 button을 추가한다.
-					$.each(data,function(idx, val){
+					$.each(dataget,function(idx, val){
 						item.push( "<li id='" + idx + "'>" 
 								+ val.ID + "|"
 								+ val.NAME + "|" 
-								+ val.AVATAR +"|" 
 								+ val.REGISTER_TIME + "|"
 								+ "</li>"
 								+ "<input type = " + "'" + "button" + "'"
@@ -72,8 +71,7 @@
 		$('#post').click(function(){
 			$postid 		= document.getElementById("postid").value;
 			$postname		= document.getElementById("postname").value;
-			$postavatar		= document.getElementById("postavatar").value;
-			var json = {"AVATAR":$postavatar,"NAME":$postname,"ID":$postid};
+			var json = {"NAME":$postname,"ID":$postid};
 			console.log(json);
 			$.ajax({
 				url		:	"postuser.jsp",

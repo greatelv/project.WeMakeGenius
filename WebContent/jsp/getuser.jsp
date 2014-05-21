@@ -5,6 +5,7 @@
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.io.*"%>
+<%@page import="com.wemakegenius.*"%>
 <%	
 
 	JSONArray 	jsona = new JSONArray();
@@ -25,7 +26,6 @@
 			
 			jsono.put("ID", rs.getString("ID"));
 			jsono.put("NAME", rs.getString("NAME"));
-			jsono.put("AVATAR", rs.getString("AVATAR"));
 			jsono.put("REGISTER_TIME", rs.getString("REGISTER_TIME"));
 			
 			jsona.put(jsono); 	 	
