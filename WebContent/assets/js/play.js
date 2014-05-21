@@ -3,7 +3,7 @@ $(function () {
 	
 	//Play Page에서 게임 리스트 Over시 Info Container 정보 조회 
 	$( "#game_list_ctr li" ).hover(function() {
-    	var curElem = $(this)
+    	var curElem = $(this);
 	
 		curElem.children('button').fadeIn();
     	

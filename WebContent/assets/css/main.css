@@ -176,14 +176,7 @@ a:after {
 
 /* Green */
 #green {
-	background-color: #74cfae;
-	height: 265px;
-	padding: 27px;
-	position: fixed;
-	border: 0px;
-	bottom: 0px;
-	height: 25%;
-	width: 100%;
+	background-color: #74cfae;	
 }
 
 #green h3 {

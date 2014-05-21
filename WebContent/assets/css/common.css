@@ -12,3 +12,12 @@
 
 .container { width:970px !important; }
 
+.bottom-container {
+	padding: 27px;
+    position: fixed;
+	border: 0px;
+	bottom: 0px;
+	height: 25%;
+	width: 100%;
+}
+

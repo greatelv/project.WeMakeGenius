@@ -3,21 +3,21 @@
 }
 
 #game_list_ctr{
-    width: 3000px;
-    height: 600px; 
+ 
     
 }
 
 #game_list_ctr > ul{
-    position: relative;
+    position: absolute;
 
-    top: 5.2em;
+    top: 20%;
+    text-align: center;
 }
 
 #game_list_ctr > ul > li{
     float: left;
-    width: 634px;
-    height: 365px;
+    width: 390px;
+    height: 298px;
     position: relative;
     background-size: cover;
     margin: 20px;
@@ -25,12 +25,14 @@
     background-color: #fff;
     border: solid 1px;
     text-align: center;
-    line-height: 332px;
+    line-height: 298px;
 }
 
 #game_list_ctr > ul > li .start{
     font-size: 35px;
     display: none;
+    width: 50%;  height: 25%;
+    padding: 0;
 }
 
 #game_list_ctr > ul > li:nth-child(3){
@@ -39,20 +41,11 @@
 }
 
 #game_info_ctr{ 
-    position: absolute;
-    /* background-color: #A4D5EC; */
-    height: 265px;
-    padding: 27px;
-    position: fixed;
-    border: 0px;
-    bottom: 0px;
-    width: 100%;
-    
     background: none;
-    background-color: none;
     background-position : center center;
     background-repeat: no-repeat;
     
+    background-size: contain;
 }
 
 #game_info_ctr .game-pic{
