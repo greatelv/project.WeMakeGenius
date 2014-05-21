@@ -15,7 +15,7 @@
 
 #game_list_ctr > ul > li{
     float: left;
-    width: 390px;
+    width: 360px;
     height: 298px;
     position: relative;
     background-size: cover;
