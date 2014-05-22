@@ -108,20 +108,100 @@ var game1 = function(){
 	var _this = $('#game_g1');
 
 	var elem = {
-		question : _this.find('.question'),
-		leftNum :  _this.find('.left-num'),
+		question : 	_this.find('.question'),
+		leftNum :  	_this.find('.left-num'),
 		rightNum :  _this.find('.right-num'),
 		option : 	_this.find('.option'),
 		title : 	$('#game_title')
 	}
 
+	var currentQNum = {
+		left : 0,
+		right : 0
+	}
+
+	var getRanNum = function(size){
+		var length = 1;
+		while(size)
+		{
+			length = length * 10;
+			size--;
+			if(size == 0)
+			{
+				break;
+			}
+		}		
+		return Math.floor(Math.random()*length);
+	};
+
+	//정답 제출 핸들러
+
+	elem.option.find('> div').click(function(){
+		var largeT = $(this).attr('largeT');
+		game1.submit(largeT);
+
+
+	});
+
+	//제출함수 로 부터 UI 처리
+	var	processSumbit = function(bool){
+		if(bool){
+			$("#result_message").html("<img id=good_or_bad src='assets/img/game/img_feedback_o.png'></img>");
+			$("#good_or_bad").fadeOut(500);
+			game.solve(true);
+
+		}
+		else if(!bool){
+			$("#result_message").html("<img id=good_or_bad src='assets/img/game/img_feedback_x.png'></img>");
+			$("#good_or_bad").fadeOut(500);
+			game.solve(false);
+		}
+	};
+	
 	return{
 		init : function(){
 			_this.show();
 			elem.title.text('숫자대소비교');
+			game1.playSet();
 		},
 		playSet : function(){
+			elem.question.hide();
 
+			currentQNum.left = getRanNum(2);
+			currentQNum.right = getRanNum(2); 
+
+			elem.leftNum.text(currentQNum.left);
+			elem.rightNum.text(currentQNum.right);
+			elem.question.fadeIn(350);
+		},
+		submit : function(largeT){
+
+			switch (largeT){
+				case 'left' :
+					if(currentQNum.left > currentQNum.right){
+						processSumbit(true);
+					}else{
+						processSumbit(false);
+					}
+				break;
+				case 'right' :
+					if(currentQNum.left < currentQNum.right){
+						processSumbit(true);
+					}else{
+						processSumbit(false);
+					}
+
+				break;
+				case 'equal' :
+
+					if(currentQNum.left == currentQNum.right){
+						processSumbit(true);
+					}else{
+						processSumbit(false);
+					}
+
+				break;
+			}
 		}
 	}
 }();

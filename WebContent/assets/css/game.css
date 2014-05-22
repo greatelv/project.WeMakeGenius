@@ -127,6 +127,7 @@
     color: cadetblue;
     display: block;
     width: 118px;
+    cursor: pointer;
 }
 
 #game_g1 .option .opt1{
