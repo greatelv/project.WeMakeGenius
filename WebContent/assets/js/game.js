@@ -139,22 +139,22 @@ var game1 = function(){
 	elem.option.find('> div').click(function(){
 		var largeT = $(this).attr('largeT');
 		game1.submit(largeT);
-
-
 	});
 
 	//제출함수 로 부터 UI 처리
 	var	processSumbit = function(bool){
 		if(bool){
-			$("#result_message").html("<img id=good_or_bad src='assets/img/game/img_feedback_o.png'></img>");
-			$("#good_or_bad").fadeOut(500);
+			$("#result_message").html("<img src='assets/img/game/img_feedback_o.png'></img>").show();
+			$("#result_message").fadeOut(500);
 			game.solve(true);
+			game1.playSet();
 
 		}
 		else if(!bool){
-			$("#result_message").html("<img id=good_or_bad src='assets/img/game/img_feedback_x.png'></img>");
-			$("#good_or_bad").fadeOut(500);
+			$("#result_message").html("<img src='assets/img/game/img_feedback_x.png'></img>").show();
+			$("#result_message").fadeOut(500);
 			game.solve(false);
+			game1.playSet();s
 		}
 	};
 	

@@ -70,6 +70,20 @@
     font-size: 30pt;
 }
 
+#result_message{
+    text-align: -webkit-center;
+    
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    right: 0px;
+    top: 27%;
+}
+
+#submit_feedback_ui{
+
+}
+
 /*숫자대소비교 게임 스타일*/
 #game_g1{
     width: 100%;
