@@ -1,40 +1,40 @@
 #page_games {
-	text-align: center;
+    text-align: center;
 }
 
 .game-info-header {
-	position: absolute;
-	top: 17%;
-	width: 705px;
-	left: 0px;
-	right: 0px;
-	margin-right: auto;
-	margin-left: auto;
-	display: none;
+    position: absolute;
+    top: 17%;
+    width: 705px;
+    left: 0px;
+    right: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    display: none;
 }
 
 #timeline {
-	position: relative;
-	width: 600px;
-	height: 21px;
-	background: #000;
-	float: left;
+    position: relative;
+    width: 600px;
+    height: 21px;
+    background: #000;
+    float: left;
 }
 
 #timeline-progress {
-	width: 0px;
-	height: 21px;
-	background: url(../img/game/img_time_yellow.png);
+    width: 0px;
+    height: 21px;
+    background: url(../img/game/img_time_yellow.png);
 }
 
 #timer {
-	position: relative;
-	display: inline-block;
-	float: right;
-	font-size: 45pt;
-	left: 10px;
-	line-height: 26px;
-	width: 105px;
+    position: relative;
+    display: inline-block;
+    float: right;
+    font-size: 45pt;
+    left: 10px;
+    line-height: 26px;
+    width: 105px;
 }
 
 #score{
@@ -58,7 +58,16 @@
 }
 
 .play-ground{
-	display: none;
+    display: none;
+}
+
+#game_title{
+    position: absolute;
+    
+    top: 10%;
+    left: 3%;
+    color: steelblue;
+    font-size: 30pt;
 }
 
 /*숫자대소비교 게임 스타일*/

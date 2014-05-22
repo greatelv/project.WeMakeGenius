@@ -111,12 +111,14 @@ var game1 = function(){
 		question : _this.find('.question'),
 		leftNum :  _this.find('.left-num'),
 		rightNum :  _this.find('.right-num'),
-		option : 	_this.find('.option')
+		option : 	_this.find('.option'),
+		title : 	$('#game_title')
 	}
 
 	return{
 		init : function(){
 			_this.show();
+			elem.title.text('숫자대소비교');
 		},
 		playSet : function(){
 
