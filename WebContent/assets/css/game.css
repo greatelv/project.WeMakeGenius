@@ -65,12 +65,13 @@
 #game_g1{
     width: 100%;
     height: 100%;
+    text-align: center;
 }
 
 #game_g1 .question{
     position: absolute;
-    top: 40%;
-    font-size: 100pt;
+    top: 37%;
+    font-size: 90pt;
     width: 670px;
     left: 0;
     right: 0;
@@ -90,8 +91,8 @@
 
 #game_g1 .question .blank{
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     background: gray;
     border-radius: 50%;
     top: -12px;
@@ -100,11 +101,34 @@
     color: #eee;
 }
 
-#game_g1 .question .option{}
+#game_g1 .option{
+    position: absolute;
+    top: 62%;
+    width: 900px;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-#game_g1 .question .option .opt1{}
+#game_g1 .option div {
+    list-style: none;
+    font-size: 120pt;
+    margin: 0px 90px;
+    color: cadetblue;
+    display: block;
+    width: 118px;
+}
 
-#game_g1 .question .option .opt2{}
+#game_g1 .option .opt1{
+    float: left;
+}
 
-#game_g1 .question .option .opt3{}
+#game_g1 .option .opt2{
+    float: left;
+}
+
+#game_g1 .option .opt3{
+    float: right;
+}
 
