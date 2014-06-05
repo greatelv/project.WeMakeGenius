@@ -1,4 +1,5 @@
-[{"LEVEL":1,"URL":"2_bird.jpg","QUESTION":"How many birds in this picture?","ANSWER":2},
+[
+{"LEVEL":1,"URL":"2_bird.jpg","QUESTION":"How many birds in this picture?","ANSWER":2},
 {"LEVEL":1,"URL":"2_dog.jpg","QUESTION":"How many dogs in this picture?","ANSWER":2},
 {"LEVEL":1,"URL":"2_slamdunk.jpg","QUESTION":"How many peoples in this picture?","ANSWER":2},
 {"LEVEL":1,"URL":"2_titanic.jpg","QUESTION":"How many peoples in this picture?","ANSWER":2},

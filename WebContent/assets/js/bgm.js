@@ -8,7 +8,7 @@ $(function bgm() {
 	$('#number_compare').click(function(){
 		$(".main_audio").trigger('pause');	
 		
-		main_audio.prop("currentTime",main_audio.prop("currentTime")+5);
+		//main_audio.prop("currentTime",main_audio.prop("currentTime")+5);
 		main_audio = $('#main_audio').attr("src",ready_go)[0];
 		main_audio = $('#main_audio').attr("loop",false)[0];
 		
@@ -21,7 +21,7 @@ $(function bgm() {
 	$('#count_number').click(function(){
 		$(".main_audio").trigger('pause');
 		
-		main_audio.prop("currentTime",main_audio.prop("currentTime")+5);
+		//main_audio.prop("currentTime",main_audio.prop("currentTime")+5);
 		main_audio = $('#main_audio').attr("src",ready_go)[0];
 		main_audio = $('#main_audio').attr("loop",false)[0];
 		

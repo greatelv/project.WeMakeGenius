@@ -32,7 +32,14 @@ $(function HomeHandler() {
 
 	//Home Page 게임 플레이 버튼 핸들러
 	$('#hello button').click(function(){
-		$('.page-locater[ref="play"]').trigger('click');
+		if(window.sessionStorage.length != 0){
+			$('.page-locater[ref="play"]').trigger('click');
+		}
+		else{
+			alert('login 먼저 하세요!');
+			
+		}
+		
 	});
 });
 
