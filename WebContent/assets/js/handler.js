@@ -30,7 +30,7 @@ $(function GnbHandler() {
 //Home 페이지 핸들러
 $(function HomeHandler() {
 
-	//Home Page 게임 플레이 버튼 핸들러
+	//Home Page 게임 플레이 버튼 핸들러 및 로그인 유무에 따른 게임페이지 이용제한
 	$('#hello button').click(function(){
 		if(window.sessionStorage.length != 0){
 			$('.page-locater[ref="play"]').trigger('click');
@@ -46,6 +46,23 @@ $(function HomeHandler() {
 		else{
 			$('.page-locater[ref="home"]').trigger('click');
 			alert('login 먼저 하세요!');
+		}
+	});
+	
+	//Home Page 통게 메뉴 핸들러 및 로그인 유무에 따른 점수 보기 제한
+	$('#stats-menu').click(function(){
+		if(window.sessionStorage.length != 0){
+			
+		}
+		else{
+			alert('login 먼저 하세요!');
+			$('#compare-play-cnt').append("<span>0점</span>");
+			$('#compare-max-combo').append("<span>0점</span>");
+			$('#compare-max-score').append("<span>0점</span>");
+			
+			$('#item-play-cnt').append("<span>0점</span>");
+			$('#item-max-combo').append("<span>0점</span>");
+			$('#item-max-score').append("<span>0점</span>");
 		}
 	});
 });

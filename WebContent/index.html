@@ -49,7 +49,7 @@
 						class="page-locater">홈</a></li>
 					<li><a href="#play" id="game_play_menu" ref="play"
 						class="page-locater">게임 플레이</a></li>
-					<li><a href="#stats" ref="stats" class="page-locater">통계</a></li>
+					<li><a href="#stats" ref="stats" class="page-locater" id="stats-menu">통계</a></li>
 					<li><a href="#join" data-toggle="modal"
 						data-target=".join-modal">회원가입</a></li>
 					<li><a href="#login" data-toggle="modal"
@@ -301,18 +301,18 @@
 					<div class="col-xs-6 centered">
 						<h2>숫자비교게임</h2>
 						<ul>
-							<li class="play-cnt">플레이 횟수 : <span></span></li>
-							<li class="max-combo">최대 콤보 : <span></span></li>
-							<li class="max-score">최대 점수 : <span></span></li>
+							<li class="play-cnt">플레이 횟수 : <span id="compare-play-cnt"></span></li>
+							<li class="max-combo">최대 콤보 : <span id="compare-max-combo"></span></li>
+							<li class="max-score">최대 점수 : <span id="compare-max-score"></span></li>
 						</ul>
 					</div>
 
 					<div class="col-xs-6 centered">
 						<h2>아이템카운트</h2>
 						<ul>
-							<li class="play-cnt">플레이 횟수 : <span></span></li>
-							<li class="max-combo">최대 콤보 : <span></span></li>
-							<li class="max-score">최대 점수 : <span></span></li>
+							<li class="play-cnt">플레이 횟수 : <span id="item-play-cnt"></span></li>
+							<li class="max-combo">최대 콤보 : <span id="item-max-combo"></span></li>
+							<li class="max-score">최대 점수 : <span id="item-max-score"></span></li>
 						</ul>
 					</div>
 				</div>
