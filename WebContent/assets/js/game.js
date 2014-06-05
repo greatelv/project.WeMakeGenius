@@ -73,14 +73,15 @@ var game = function(){
 					//_elem.current.text(nRemainTime.toString());
 				},
 				complete: function(){
+					//게임이 끝나고 할 액션 정보
 					console.log('complete!!');
 					setTimeout(function(){
-		        		$("#finish_message").html("<img src='assets/img/game/img_ready.png'></img>");
-
-		        		game.runTimer();
-		        		callback && callback();
-
-		        	}, 500);
+						$(".game-info-header").hide();
+						$(".play-ground").hide();
+		        		$("#finish_message").html(
+		        				"<img src='assets/img/game/img_gameover.png'></img><br/>" +
+		        				"<h2>점수 : "+ point +"</h2>");
+		        	}, 100);
 				}
 
 			});
