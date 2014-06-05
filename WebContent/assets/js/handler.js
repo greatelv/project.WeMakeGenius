@@ -36,10 +36,17 @@ $(function HomeHandler() {
 			$('.page-locater[ref="play"]').trigger('click');
 		}
 		else{
-			alert('login 먼저 하세요!');
-			
+			alert('login 먼저 하세요!');	
 		}
-		
+	});
+	$('#game_play_menu').click(function(){
+		if(window.sessionStorage.length != 0){
+			$('.page-locater[ref="play"]').trigger('click');
+		}
+		else{
+			$('.page-locater[ref="home"]').trigger('click');
+			alert('login 먼저 하세요!');
+		}
 	});
 });
 
