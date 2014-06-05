@@ -57,6 +57,10 @@
     top: 30%;
 }
 
+#finish_message{
+    position: relative;
+    top: 30%;
+}
 .play-ground{
     display: none;
 }

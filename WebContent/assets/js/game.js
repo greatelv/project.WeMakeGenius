@@ -6,6 +6,7 @@ var game = function(){
 		This : 			$('#page_games'),
 		score : 		$('#score'),
 		startMessge : 	$('#start_message'),
+		finishMessage : $('#finish_message'),
 		gameHeader : 	$('.game-info-header'),
 		timer : 		$('#timer'),
 		progess : 		$('#timeline-progress')
@@ -17,7 +18,7 @@ var game = function(){
 	var point = 0;
 	var combo = 0;
 
-	var limitSec = 60;
+	var limitSec = 5;
 	
 	var sycPoint = function(){
 		elem.score.text(point+' Point');
@@ -73,6 +74,13 @@ var game = function(){
 				},
 				complete: function(){
 					console.log('complete!!');
+					setTimeout(function(){
+		        		$("#finish_message").html("<img src='assets/img/game/img_ready.png'></img>");
+
+		        		game.runTimer();
+		        		callback && callback();
+
+		        	}, 500);
 				}
 
 			});
