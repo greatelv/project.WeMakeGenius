@@ -34,6 +34,7 @@ var game = function(){
 			$('.page').hide();
 		    $('#page_games').show();
 		    $('#rank-scroll').hide();
+		    $("#finish_message").html("");
 		    
 		    setTimerArray.push(setTimeout(function(){
 		    	$("#start_message").html("<img src='assets/img/game/img_ready.png'></img>");
