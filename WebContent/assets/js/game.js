@@ -91,14 +91,14 @@ var game = function(){
 			sycPoint();
 
 			elem.gameHeader.hide();
-			elem.progess.stop().width(0)
+			elem.progess.stop().width(0);
 			elem.timer.text(10);
 
 			$.each(setTimerArray, function(idx, item){
 				item.clearTimeout();
 			});
 		}
-	}
+	};
 }();
 
 
@@ -113,12 +113,12 @@ var game1 = function(){
 		rightNum :  _this.find('.right-num'),
 		option : 	_this.find('.option'),
 		title : 	$('#game_title')
-	}
+	};
 
 	var currentQNum = {
 		left : 0,
 		right : 0
-	}
+	};
 
 	var getRanNum = function(size){
 		var length = 1;
@@ -154,7 +154,7 @@ var game1 = function(){
 			$("#result_message").html("<img src='assets/img/game/img_feedback_x.png'></img>").show();
 			$("#result_message").fadeOut(500);
 			game.solve(false);
-			game1.playSet();s
+			game1.playSet();
 		}
 	};
 	
@@ -203,5 +203,5 @@ var game1 = function(){
 				break;
 			}
 		}
-	}
+	};
 }();
