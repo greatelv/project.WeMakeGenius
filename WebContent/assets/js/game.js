@@ -21,7 +21,7 @@ var game = function(){
 	var limitSec = 5;
 	
 	var sycPoint = function(){
-		elem.score.text(point+' Point');
+		elem.score.text(point+' Point' +  + combo +' COMBO');
 	};
 
 	//setTimer 객체들
@@ -88,8 +88,10 @@ var game = function(){
 		solve : function(isCorrect){
 			if(isCorrect){
 				point = point + acqPoint;
+				combo++;
 			}else{
 				point = point - acqPoint;
+				combo=0;
 			}
 			sycPoint();
 		},
