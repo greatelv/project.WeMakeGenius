@@ -36,7 +36,7 @@ $(function HomeHandler() {
 			$('.page-locater[ref="play"]').trigger('click');
 		}
 		else{
-			alert('login 먼저 하세요!');	
+			alert('로그인을 먼저 해야 합니다.');	
 		}
 	});
 	$('#game_play_menu').click(function(){
@@ -45,7 +45,7 @@ $(function HomeHandler() {
 		}
 		else{
 			$('.page-locater[ref="home"]').trigger('click');
-			alert('login 먼저 하세요!');
+			alert('로그인을 먼저 해야 합니다.');
 		}
 	});
 	
@@ -55,7 +55,8 @@ $(function HomeHandler() {
 			
 		}
 		else{
-			alert('login 먼저 하세요!');
+			$('.page-locater[ref="home"]').trigger('click');
+			alert('로그인을 먼저 해야 합니다.');
 			$('#compare-play-cnt').append("<span>0점</span>");
 			$('#compare-max-combo').append("<span>0점</span>");
 			$('#compare-max-score').append("<span>0점</span>");
