@@ -30,10 +30,14 @@ $(function () {
         var curGameId = curElem.attr('gameId');
 
         console.log('curGameIdcurGameId : '+curGameId);
+
         game.readyGo(function(){
             if(curGameId == 'g1'){
                 game1.init();
             }
+            if(curGameId == 'g2'){
+                game2.init();
+            }       
         });
     });
 });

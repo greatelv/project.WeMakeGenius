@@ -217,3 +217,73 @@ var game1 = function(){
 		}
 	};
 }();
+
+//사진숫자세기 게임 인스턴스
+var game2 = function(){
+
+	var _this = $('#game_g2');
+
+	var elem = {
+		question : 	_this.find('.question'),
+		leftNum :  	_this.find('.left-num'),
+		rightNum :  _this.find('.right-num'),
+		option : 	_this.find('.option'),
+		title : 	$('#game_title')
+	};
+
+	var currentQNum = {
+		left : 0,
+		right : 0
+	};
+
+	var getRanNum = function(size){
+		var length = 1;
+		while(size)
+		{
+			length = length * 10;
+			size--;
+			if(size == 0)
+			{
+				break;
+			}
+		}		
+		return Math.floor(Math.random()*length);
+	};
+
+	//정답 제출 핸들러
+
+	elem.option.find('> div').click(function(){
+		var largeT = $(this).attr('largeT');
+		game2.submit(largeT);
+	});
+
+	//제출함수 로 부터 UI 처리
+	var	processSumbit = function(bool){
+		if(bool){
+			$("#result_message").html("<img src='assets/img/game/img_feedback_o.png'></img>").show();
+			$("#result_message").fadeOut(500);
+			game.solve(true);
+			game2.playSet();
+
+		}
+		else if(!bool){
+			$("#result_message").html("<img src='assets/img/game/img_feedback_x.png'></img>").show();
+			$("#result_message").fadeOut(500);
+			game.solve(false);
+			game2.playSet();
+		}
+	};
+	
+	return{
+		init : function(){
+			_this.show();
+			elem.title.text('사진숫자세기');
+			game2.playSet();
+		},
+		playSet : function(){
+
+		},
+		submit : function(largeT){
+		}
+	};
+}();
