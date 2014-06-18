@@ -106,14 +106,12 @@ $(function UserHandler() {
 	//로그인
 	$('#login').click(function(){
 		var id = document.getElementById("input-login-id").value;
-		
 		$.ajax({
 			url		:	"jsp/login.jsp?id="+id,
 			type	:	"GET",
 			datatype:	"json",
 			success	: function(res){
 				var jsonr = JSON.parse(res);
-				
 				if(jsonr.result == 1){
 					alert(jsonr.name+'님 환영합니다.');
 
@@ -135,8 +133,10 @@ $(function UserHandler() {
 							//alert(data);
 						}
 					});
-				}else{
+				}
+				else{
 					alert('로그인에 실패하였습니다.');
+					$('#input-login-id').val("");
 				}
 			},
 			error	: function(){
@@ -155,6 +155,11 @@ $(function UserHandler() {
 	
 	$('#logout-btn').click(function(){
 		outSession();
+	});
+	
+	
+	$('#back_to_game').click(function(){
+		$('.page-locater[ref="play"]').trigger('click');
 	});
 });
 
