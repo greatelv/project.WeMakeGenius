@@ -65,6 +65,31 @@
 #finish_message{
     position: relative;
     top: 30%;
+    display: none;
+}
+
+#finish_message img{
+
+}
+
+#finish_message h2{
+    font-size: 50pt;   
+}
+
+
+#finish_message h2.point{
+    color: cadetblue;   
+}
+
+#finish_message h2.combo{
+    color: darksalmon;
+}
+
+#finish_message .home{
+    font-size: 37pt;
+    
+    display: inline-block;
+    cursor: pointer;
 }
 
 .play-ground{
@@ -198,6 +223,7 @@
     width: 320px;
     height: 350px;
     position: relative;
+    float: right;
 }
 
 #game_g2 .option > div{
