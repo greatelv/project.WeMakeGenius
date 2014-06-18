@@ -52,8 +52,35 @@ $(function HomeHandler() {
 	
 	//Home Page 통게 메뉴 핸들러 및 로그인 유무에 따른 점수 보기 제한
 	$('#stats-menu').click(function(){
-		if(window.sessionStorage.length != 0){
+		alert('stat start!');
+		/*if(window.sessionStorage.length != 0){
+			var id =  window.sessionStorage.id  || '';
+			$.ajax({
+				url		:	"jsp/getscore.jsp?id="+id,
+				type	:	"POST",
+				datatype:	"json",
+				success	:	function(data){
+					alert('getscore done!');
+					var stat = JSON.parse(data);
+					if(stat.GAEMTYPE == 1) {
+						var combo = '<span>' + stat.MAXCOMBO + '</span>';
+						var score = '<span>' + stat.SCORE + '</span>';
+						$('#compare-max-combo').append(combo);
+						$('#compare-max-score').append(score);
+					}
+				}
+			});
+			$('#compare-play-cnt').append("<span>0점</span>");
 			
+			$('#item-play-cnt').append("<span>0점</span>");
+			$('#item-max-combo').append("<span>0점</span>");
+			$('#item-max-score').append("<span>0점</span>");
+			
+			$.ajax({
+				url		:	"jsp/getscore.jsp?id="+id,
+				type	:	"POST",
+				datatype:	"json",
+			});
 		}
 		else{
 			$('.page-locater[ref="home"]').trigger('click');
@@ -65,7 +92,7 @@ $(function HomeHandler() {
 			$('#item-play-cnt').append("<span>0점</span>");
 			$('#item-max-combo').append("<span>0점</span>");
 			$('#item-max-score').append("<span>0점</span>");
-		}
+		}*/
 	});
 });
 
