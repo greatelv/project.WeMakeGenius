@@ -4,14 +4,28 @@
 
 //페이지간의 전환
 $(function GnbHandler() {
-
 	$('.page').hide();
 	$('#page_home').show();
 
 	//GNB 핸들러
 	$('.page-locater').click(function(e){
+
 		e.stopImmediatePropagation();
 		var targetRef = $(this).attr('ref');
+
+		if(targetRef=='play'){
+			if(window.sessionStorage.length == 0){
+				alert('로그인을 먼저 해야 합니다.');
+				return false;
+			}
+		}else if(targetRef=='stats'){
+			if(window.sessionStorage.length != 0){
+				stats.init();
+			}else{
+				alert('로그인을 먼저 해야 합니다.');
+				return false;
+			}
+		}
 
 		$('.page').hide();
 		$('#page_'+targetRef).show();
@@ -21,65 +35,6 @@ $(function GnbHandler() {
 
 		//게임 진행중에 나왔을 시 기존 게임 컨테이너 clear
 		game.clearGame();
-		if(targetRef=='play'){
-			if(window.sessionStorage.length != 0){
-				$('.page-locater[ref="play"]').trigger('click');
-			}
-			else{
-				$('.page-locater[ref="home"]').trigger('click');
-				alert('로그인을 먼저 해야 합니다.');
-			}
-		}
-		else if(targetRef=='stats'){
-			if(window.sessionStorage.length != 0){
-				var id =  window.sessionStorage.id  || '';
-				$.ajax({
-					url		:	"jsp/getscore.jsp?id="+id+"&type=score",
-					type	:	"POST",
-					datatype:	"json",
-					success	:	function(data){
-						var json_score = JSON.parse(data);
-						var score = "<span>" + json_score[0].SCORE + "점</span>";
-						$('#compare-max-score').append(score);
-						$.ajax({
-							url		:	"jsp/getscore.jsp?id="+id+"&type=combo",
-							type	:	"POST",
-							datatype:	"json",
-							success	:	function(data){
-								var json_combo = JSON.parse(data);
-								//alert('hello')
-								var combo = "<span>" + json_combo[0].MAXCOMBO + "점</span>";
-								alert(combo);
-								$('#compare-max-combo').append(combo);
-							},
-							error	: function(){
-								console.log('error get max score');
-							},
-							complete: function(){
-								console.log('complete get max score post');
-							}
-						});
-					},
-					error	: function(){
-						console.log('error get max combo');
-					},
-					complete: function(){
-						console.log('complete get max combo');
-					}
-				});
-			}
-			else
-			{
-				alert('로그인을 먼저 해야 합니다.');
-				$('#compare-play-cnt').append("<span>0점</span>");
-				$('#compare-max-combo').append("<span>0점</span>");
-				$('#compare-max-score').append("<span>0점</span>");
-				
-				$('#item-play-cnt').append("<span>0점</span>");
-				$('#item-max-combo').append("<span>0점</span>");
-				$('#item-max-score').append("<span>0점</span>");
-			}
-		}
 	});
 
 	//순위 정보 Marquee

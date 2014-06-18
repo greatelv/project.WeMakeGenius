@@ -24,7 +24,7 @@
 			Class.forName(driverName);
 			Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
 		
-			String sql  =	"SELECT USER_ID, GAME_TYPE, MAX_COMBO, SCORE FROM play WHERE GAME_TYPE = '"+game_type+"'"+
+			String sql  =	"SELECT USER_ID, DATE(START_TIME) AS START_TIME, SCORE FROM play WHERE GAME_TYPE = '"+game_type+"'"+
 							"ORDER BY SCORE DESC LIMIT 5";
 		
 			PreparedStatement ps;
@@ -35,9 +35,8 @@
 				JSONObject 	jsono = new JSONObject();
 			
 				jsono.put("SCORE", rs.getInt("SCORE"));
-				jsono.put("MAXCOMBO", rs.getInt("MAX_COMBO"));
 				jsono.put("ID", rs.getString("USER_ID"));
-				jsono.put("GAMETYPE", rs.getString("GAME_TYPE"));
+				jsono.put("PLAY_TIME", rs.getString("START_TIME"));
 			
 				jsona.put(jsono); 
 				System.out.println("jsona : "+jsona);
