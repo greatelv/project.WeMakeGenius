@@ -32,6 +32,9 @@ try{
 	
 	message = "회원가입이 정상적으로 완료되었습니다.";
 	
+	ps.close();
+	con.close();
+	
 }catch (ClassNotFoundException e){
 	e.printStackTrace();
 	result = 0;

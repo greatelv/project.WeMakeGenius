@@ -157,8 +157,8 @@ $(function UserHandler() {
 	});
 	
 	
-	$('#back_to_game').click(function(){
-		$('.page-locater[ref="play"]').trigger('click');
+	$('#back_to_select').click(function(){
+		alert('hello');
 	});
 });
 

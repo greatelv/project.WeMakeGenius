@@ -20,6 +20,9 @@
 		ps = con.prepareStatement(sql);
 		ps.setString(1, ID);
 		ps.executeUpdate();
+		
+		ps.close();
+		con.close();
 	}catch (ClassNotFoundException e){
 		e.printStackTrace();
 	}catch (SQLException e){

@@ -81,7 +81,8 @@ var game = function(){
 						$(".play-ground").hide();
 		        		$("#finish_message").html(
 		        				"<img src='assets/img/game/img_gameover.png'></img><br/>" +
-		        				"<h2>점수 : "+ point + "</h2>" + "<button type='button' id='back_to_game'>Back</button>");
+		        				"<h2>점수 : "+ point + "</h2>" + 
+		        				"<button id='back_to_select'>BACK</button>");
 		        	}, 100);
 					
 					var id =  window.sessionStorage.id  || '';

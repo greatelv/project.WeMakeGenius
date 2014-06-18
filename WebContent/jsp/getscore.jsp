@@ -33,6 +33,10 @@
 			jsona.put(jsono); 	 	
 			
 		}
+		
+		rs.close();
+		stat.close();
+		con.close();
 	}catch (ClassNotFoundException e){
 		//e.printStackTrace();
 		out.println(e);

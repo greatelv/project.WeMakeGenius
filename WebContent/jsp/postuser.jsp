@@ -31,6 +31,8 @@ try{
 	ps.setString(3, AVATAR);
 	ps.executeUpdate();
 	
+	ps.close();
+	con.close();
 }catch (ClassNotFoundException e){
 	e.printStackTrace();
 }catch (SQLException e){
