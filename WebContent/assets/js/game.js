@@ -250,38 +250,13 @@ var game2 = function(){
 	var _this = $('#game_g2');
 
 	var elem = {
-		question : 	_this.find('.question'),
-		leftNum :  	_this.find('.left-num'),
-		rightNum :  _this.find('.right-num'),
+		question : 	_this.find('.num1'),
+		leftNum :  	_this.find('.num2'),
+		rightNum :  _this.find('.num3'),
 		option : 	_this.find('.option'),
 		title : 	$('#game_title')
 	};
 
-	var currentQNum = {
-		left : 0,
-		right : 0
-	};
-
-	var getRanNum = function(size){
-		var length = 1;
-		while(size)
-		{
-			length = length * 10;
-			size--;
-			if(size == 0)
-			{
-				break;
-			}
-		}		
-		return Math.floor(Math.random()*length);
-	};
-
-	//정답 제출 핸들러
-
-	elem.option.find('> div').click(function(){
-		var largeT = $(this).attr('largeT');
-		game2.submit(largeT);
-	});
 
 	//제출함수 로 부터 UI 처리
 	var	processSumbit = function(bool){
