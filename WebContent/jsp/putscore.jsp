@@ -33,6 +33,7 @@ try{
 	ps.executeUpdate();
 	
 	ps.close();
+	con.close();
 }catch (ClassNotFoundException e){
 	e.printStackTrace();
 	message = e.getMessage().toString();
