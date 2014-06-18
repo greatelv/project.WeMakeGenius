@@ -9,45 +9,130 @@
 
 	JSONArray 	jsona = new JSONArray();
 	String id 	 = request.getParameter("id");
-
-	try{
+	String type  = request.getParameter("type");
+	
+	if(type.equals("score")){
+		try{
 		
-		String driverName = "com.mysql.jdbc.Driver";
+			String driverName = "com.mysql.jdbc.Driver";
 		
-		Class.forName(driverName);
-		Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
+			Class.forName(driverName);
+			Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
 		
-		String sql  = "SELECT USER_ID, GAME_TYPE, SCORE, MAX_COMBO ";
-		   	   sql += "FROM play GROUP BY GAME_TYPE, USER_ID, SCORE ";
-		   	   sql += "HAVING USER_ID = '"+ id +"' ";
-		   	   sql += "ORDER BY SCORE DESC";
+			String sql  = "SELECT USER_ID, GAME_TYPE, SCORE, MAX_COMBO ";
+		   	   	   sql += "FROM play GROUP BY GAME_TYPE, USER_ID, SCORE ";
+		   	   	   sql += "HAVING USER_ID = '"+ id +"' ";
+		   		   sql += "ORDER BY SCORE DESC";
 		
-		PreparedStatement ps;
-		ResultSet rs;
-		Statement stat = con.createStatement();
-		rs = stat.executeQuery(sql);
-		while(rs.next()){
-			JSONObject 	jsono = new JSONObject();
+			PreparedStatement ps;
+			ResultSet rs;
+			Statement stat = con.createStatement();
+			rs = stat.executeQuery(sql);
+			while(rs.next()){
+				JSONObject 	jsono = new JSONObject();
 			
-			jsono.put("SCORE", rs.getInt("SCORE"));
-			jsono.put("MAXCOMBO", rs.getInt("MAX_COMBO"));
-			jsono.put("ID", rs.getString("USER_ID"));
-			jsono.put("GAMETYPE", rs.getString("GAME_TYPE"));
+				jsono.put("SCORE", rs.getInt("SCORE"));
+				jsono.put("MAXCOMBO", rs.getInt("MAX_COMBO"));
+				jsono.put("ID", rs.getString("USER_ID"));
+				jsono.put("GAMETYPE", rs.getString("GAME_TYPE"));
 			
-			jsona.put(jsono); 	 	
-			
+				jsona.put(jsono); 	 	
+				
+			}
+			rs.close();
+			stat.close();
+			con.close();
+		}catch (ClassNotFoundException e){
+			//e.printStackTrace();
+			out.println(e);
+		}catch (SQLException e){
+			//e.printStackTrace();
+			out.println(e);
+		}finally{
+			out.println(jsona);	
 		}
-		
-		
-	}catch (ClassNotFoundException e){
-		//e.printStackTrace();
-		out.println(e);
-	}catch (SQLException e){
-		//e.printStackTrace();
-		out.println(e);
-	}finally{
-		out.println(jsona);	
 	}
-  
+	else if(type.equals("combo")){
+		try{
+			
+			String driverName = "com.mysql.jdbc.Driver";
+		
+			Class.forName(driverName);
+			Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
+		
+			String sql  = "SELECT USER_ID, GAME_TYPE, SCORE, MAX_COMBO ";
+		   	   	   sql += "FROM play GROUP BY GAME_TYPE, USER_ID, SCORE ";
+		   	   	   sql += "HAVING USER_ID = '"+ id +"' ";
+		   		   sql += "ORDER BY MAXCOMBO DESC";
+		
+			PreparedStatement ps;
+			ResultSet rs;
+			Statement stat = con.createStatement();
+			rs = stat.executeQuery(sql);
+			while(rs.next()){
+				JSONObject 	jsono = new JSONObject();
+			
+				jsono.put("SCORE", rs.getInt("SCORE"));
+				jsono.put("MAXCOMBO", rs.getInt("MAX_COMBO"));
+				jsono.put("ID", rs.getString("USER_ID"));
+				jsono.put("GAMETYPE", rs.getString("GAME_TYPE"));
+			
+				jsona.put(jsono); 	 	
+				
+			}
+			rs.close();
+			stat.close();
+			con.close();
+		}catch (ClassNotFoundException e){
+			//e.printStackTrace();
+			out.println(e);
+		}catch (SQLException e){
+			//e.printStackTrace();
+			out.println(e);
+		}finally{
+			out.println(jsona);	
+		}
+	}
+	else if(type.equals("play")){
+		try{
+			
+			String driverName = "com.mysql.jdbc.Driver";
+		
+			Class.forName(driverName);
+			Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
+		
+			String sql  = "SELECT USER_ID, GAME_TYPE, SCORE, MAX_COMBO ";
+		   	   	   sql += "FROM play GROUP BY GAME_TYPE, USER_ID, SCORE ";
+		   	   	   sql += "HAVING USER_ID = '"+ id +"' ";
+		   		   sql += "ORDER BY MAXCOMBO DESC";
+		
+			PreparedStatement ps;
+			ResultSet rs;
+			Statement stat = con.createStatement();
+			rs = stat.executeQuery(sql);
+			while(rs.next()){
+				JSONObject 	jsono = new JSONObject();
+			
+				jsono.put("SCORE", rs.getInt("SCORE"));
+				jsono.put("MAXCOMBO", rs.getInt("MAX_COMBO"));
+				jsono.put("ID", rs.getString("USER_ID"));
+				jsono.put("GAMETYPE", rs.getString("GAME_TYPE"));
+			
+				jsona.put(jsono); 	 	
+				
+			}
+			rs.close();
+			stat.close();
+			con.close();
+		}catch (ClassNotFoundException e){
+			//e.printStackTrace();
+			out.println(e);
+		}catch (SQLException e){
+			//e.printStackTrace();
+			out.println(e);
+		}finally{
+			out.println(jsona);	
+		}
+	}
 %>
 

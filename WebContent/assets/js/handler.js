@@ -34,13 +34,37 @@ $(function GnbHandler() {
 			if(window.sessionStorage.length != 0){
 				var id =  window.sessionStorage.id  || '';
 				$.ajax({
-					url		:	"jsp/getscore.jsp?id="+id,
+					url		:	"jsp/getscore.jsp?id="+id+"&type=score",
 					type	:	"POST",
 					datatype:	"json",
 					success	:	function(data){
-						var json = JSON.parse(data);
-						var score = "<span>" + json[0].MAXSCORE + "</span>";
-						alert(score);
+						var json_score = JSON.parse(data);
+						var score = "<span>" + json_score[0].SCORE + "점</span>";
+						$('#compare-max-score').append(score);
+						$.ajax({
+							url		:	"jsp/getscore.jsp?id="+id+"&type=combo",
+							type	:	"POST",
+							datatype:	"json",
+							success	:	function(data){
+								var json_combo = JSON.parse(data);
+								//alert('hello')
+								var combo = "<span>" + json_combo[0].MAXCOMBO + "점</span>";
+								alert(combo);
+								$('#compare-max-combo').append(combo);
+							},
+							error	: function(){
+								console.log('error get max score');
+							},
+							complete: function(){
+								console.log('complete get max score post');
+							}
+						});
+					},
+					error	: function(){
+						console.log('error get max combo');
+					},
+					complete: function(){
+						console.log('complete get max combo');
 					}
 				});
 			}
