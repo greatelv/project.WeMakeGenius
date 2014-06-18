@@ -25,13 +25,13 @@ var game = function(){
 	var sycPoint = function(){
 		elem.score.html(point+' Point'+'&nbsp;&nbsp;<span> '+combo+' Combo</span>');
 	};
-
 	//setTimer 객체들
 	var setTimerArray = [];
 
 	//게임 오버에서 홈으로 버튼 핸들러
 	$('#finish_message .home').click(function(){
 		$('.page-locater[ref="play"]').trigger('click');
+		$(".main_audio").trigger('pause');
 	});
 
 	return {
@@ -90,6 +90,12 @@ var game = function(){
 		        		$("#finish_message").show();
 		        		$("#finish_message").find('.point').text(point+' Point');
 		        		$("#finish_message").find('.combo').text(combo+' Combo');
+
+		        		$(".main_audio").trigger('pause');	
+						var ending = "assets/sound/BT_ending.mp3";
+						main_audio = $('#main_audio').attr("src",ending)[0];
+						main_audio = $('#main_audio').attr("loop",true)[0];       
+						
 		        	}, 100);
 					
 					var id =  window.sessionStorage.id  || '';
@@ -108,11 +114,6 @@ var game = function(){
 							console.log('error from post');
 						},
 						complete: function(){
-							$(".main_audio").trigger('pause');	
-							var ending = "assets/sound/BT_ending.mp3";
-								main_audio = $('#main_audio').attr("src",ending)[0];
-								main_audio = $('#main_audio').attr("loop",true)[0];       
-							console.log('complete from post');
 						}
 					});
 				}
@@ -141,6 +142,8 @@ var game = function(){
 			$.each(setTimerArray, function(idx, item){
 				item.clearTimeout();
 			});
+
+			$(".main_audio").trigger('pause');
 		},
 		getScore : function(){
 			return point;
