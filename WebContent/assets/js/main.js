@@ -12,4 +12,9 @@ $(function () {
 });
 
 
-
+//배열 프로토타입함수 작성
+Array.prototype.remove = function(from) {
+		var nPos = this.indexOf(from);
+		if ( ~nPos ) this.splice(nPos, 1);
+		return this;
+};

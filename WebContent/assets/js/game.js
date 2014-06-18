@@ -12,16 +12,18 @@ var game = function(){
 		progess : 		$('#timeline-progress')
 	};
 
+	var type = null;
+
 	//문제 풀이시 획득 포인트
 	var acqPoint = 1000;
 
 	var point = 0;
 	var combo = 0;
 
-	var limitSec = 5;
+	var limitSec = 60;
 	
 	var sycPoint = function(){
-		elem.score.text(point+' Point' +  + combo +' COMBO');
+		elem.score.html(point+' Point'+'&nbsp;&nbsp;<span> '+combo+' Combo</span>');
 	};
 
 	//setTimer 객체들
@@ -86,7 +88,7 @@ var game = function(){
 		        	}, 100);
 					
 					var id =  window.sessionStorage.id  || '';
-					var json = {"GAMETYPE":"1", "ID":id, "SCORE":point, "MAXCOMBO":combo};
+					var json = {"GAMETYPE":type, "ID":id, "SCORE":point, "MAXCOMBO":combo};
 					
 					$.ajax({
 						url		:	"jsp/putscore.jsp",
@@ -134,6 +136,15 @@ var game = function(){
 			$.each(setTimerArray, function(idx, item){
 				item.clearTimeout();
 			});
+		},
+		getScore : function(){
+			return point;
+		},
+		getCombo : function(){
+			return combo;
+		},
+		setType : function(gameType){
+			type = gameType;
 		}
 	};
 }();
@@ -172,7 +183,6 @@ var game1 = function(){
 	};
 
 	//정답 제출 핸들러
-
 	elem.option.find('> div').click(function(){
 		var largeT = $(this).attr('largeT');
 		game1.submit(largeT);
@@ -200,6 +210,7 @@ var game1 = function(){
 			_this.show();
 			elem.title.text('숫자대소비교');
 			game1.playSet();
+			game.setType(1);
 		},
 		playSet : function(){
 			elem.question.hide();
@@ -249,12 +260,18 @@ var game2 = function(){
 	var _this = $('#game_g2');
 
 	var elem = {
-		question : 	_this.find('.num1'),
-		leftNum :  	_this.find('.num2'),
-		rightNum :  _this.find('.num3'),
+		picture : 	_this.find('.picture'),
 		option : 	_this.find('.option'),
+		num1 :  	_this.find('.num1'),
+		num2 :  	_this.find('.num2'),
+		num3 :  	_this.find('.num3'),
+		num4 :  	_this.find('.num4'),
 		title : 	$('#game_title')
 	};
+
+	var level = 1;
+	var currentPicMeta = {};
+	var example = {}
 
 
 	//제출함수 로 부터 UI 처리
@@ -273,17 +290,119 @@ var game2 = function(){
 			game2.playSet();
 		}
 	};
+
+		/*이 함수에 레벨을 정수로 입력하면 해당 레벨의 문제가 랜덤으로 반환됩니다.
+	 * 콘솔 창에 반환된 JSON과 레벨이 표시됩니다.
+	 * 입력 : 정수
+	 * 출력 : JSON 배열
+	 */
+	var getRanPicMeta = function(input_level){
+		var random_number;
+		switch(input_level)
+		{
+			case 1:
+				console.log("레벨1 문제를 랜덤으로 가져옵니다.");
+				random_number = Math.floor(Math.random() * picture.level_1.length);
+				// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+				console.log(picture.level_1[random_number]);
+				return picture.level_1[random_number];
+				break;
+			
+			case 2:
+				console.log("레벨2 문제를 랜덤으로 가져옵니다.");
+				random_number = Math.floor(Math.random() * picture.level_2.length);
+				// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+				console.log(picture.level_2[random_number]);
+				return picture.level_2[random_number];
+				break;
+				
+			case 3:
+				console.log("레벨3 문제를 랜덤으로 가져옵니다.");
+				random_number = Math.floor(Math.random() * picture.level_3.length);
+				// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+				console.log(picture.level_3[random_number]);
+				return picture.level_3[random_number];
+				break;
+				
+			case 4:
+				console.log("레벨4 문제를 랜덤으로 가져옵니다.");
+				random_number = Math.floor(Math.random() * picture.level_4.length);
+				// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+				console.log(picture.level_4[random_number]);
+				return picture.level_4[random_number];
+				break;
+				
+			case 5:
+				console.log("레벨5 문제를 랜덤으로 가져옵니다.");
+				random_number = Math.floor(Math.random() * picture.level_5.length);
+				// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+				console.log(picture.level_5[random_number]);
+				return picture.level_5[random_number];
+				break;
+				
+			default :
+				console.log("예외 : random_picture 함수에는 1~5만 입력가능합니다.");
+				return -1;
+		}
+	}
+
+	var getExample = function(nCorrectAnswer) {
+		var nStart = Math.max(nCorrectAnswer-2 , 0);
+		var aPool = _.range(nStart, nCorrectAnswer+2);
+		aPool = aPool.remove(nCorrectAnswer);
+
+		var aExamples = _.flatten([_.sample(aPool, 4), nCorrectAnswer]);
+		
+		return _.shuffle(aExamples);
+	};
+
+	var upgradeLevel = function(){
+		if(game.getScore() == 4000){
+			level = 1;
+		}else if(game.getScore() == 7000){
+			level = 2;
+		}else if(game.getScore() == 12000){
+			level = 3;
+		}else if(game.getScore() == 16000){
+			level = 4;
+		}
+	};
+
+	//정답 제출 핸들러
+	elem.option.find('> div').click(function(){
+		var submitVal = $(this).text();
+		game2.submit(submitVal);
+	});
 	
 	return{
 		init : function(){
 			_this.show();
-			elem.title.text('사진숫자세기');
+			elem.title.text('사진숫자퀴즈');
 			game2.playSet();
+			game.setType(2);
 		},
 		playSet : function(){
+			elem.picture.hide();
+			elem.option.find('> div').hide();
 
+			upgradeLevel();
+
+			currentPicMeta = getRanPicMeta(level);
+			var exampleArray = getExample(currentPicMeta.ANSWER);
+
+			$.each(exampleArray, function(idx, item){
+				elem.option.find('> div').eq(idx).text(item).fadeIn(200);
+			})
+
+			elem.picture.css('background-image', 'url(assets/game/'+level+'/'+currentPicMeta.URL+')');
+			elem.picture.fadeIn(350);
 		},
-		submit : function(largeT){
+		submit : function(submitVal){
+			if(submitVal == currentPicMeta.ANSWER){
+				processSumbit(true);
+			}else{
+				processSumbit(false);
+			}
 		}
 	};
 }();

@@ -4,7 +4,7 @@ var picture = {
 		{"LEVEL":1,"URL":"2_dog.jpg","QUESTION":"How many dogs in this picture?","ANSWER":2},
 		{"LEVEL":1,"URL":"2_slamdunk.jpg","QUESTION":"How many peoples in this picture?","ANSWER":2},
 		{"LEVEL":1,"URL":"2_titanic.jpg","QUESTION":"How many peoples in this picture?","ANSWER":2},
-		{"LEVEL":1,"URL":"3_cat.jpg","QUESTION":"How many cats in this picture?","ANSWER":3},
+		{"LEVEL":1,"URL":"3_cat.png","QUESTION":"How many cats in this picture?","ANSWER":3},
 		{"LEVEL":1,"URL":"3_chosun_woman.jpg","QUESTION":"How many women in this picture?","ANSWER":3},
 		{"LEVEL":1,"URL":"3_sportscar.jpg","QUESTION":"How many sportcar in this picture?","ANSWER":3},
 		{"LEVEL":1,"URL":"4_bird.jpg","QUESTION":"How many birds in this picture?","ANSWER":4},
