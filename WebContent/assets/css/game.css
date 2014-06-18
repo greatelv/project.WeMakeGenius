@@ -42,7 +42,7 @@
     font-size: 30pt;
     position: absolute;
     float: right;
-    width: 310px;
+    width: 500px;
     top: 25px;
     text-align: center;
     color: brown;  
@@ -50,6 +50,11 @@
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#score > span{
+    color: cadetblue;
+    
 }
 
 #start_message{
@@ -161,3 +166,78 @@
     float: right;
 }
 
+
+#game_g2{
+
+}
+
+#game_g2 > div{
+    position: absolute;
+
+    top: 35%;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+#game_g2 .picture{
+    width: 350px;
+    height: 350px;
+    float: left;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#game_g2 .option{
+    display: inline-block;
+    
+    width: 320px;
+    height: 350px;
+    position: relative;
+}
+
+#game_g2 .option > div{
+    display: inline-block;
+    
+    font-size: 41pt;
+    width: 95px;
+    height: 95px;
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#game_g2 .num1{
+    top: 0px;
+    left: 50%;
+    margin-left: -43px;
+    background: url(../img/game/light_blue.png);
+}
+
+#game_g2 .num2{
+    right: 0%;
+    top: 50%;
+    margin-top: -43px;
+    background: url(../img/game/light_green.png);
+}
+
+#game_g2 .num3{
+    bottom: 0px;  
+    left: 50%;  
+    margin-left: -43px;
+    background: url(../img/game/light_purple.png);
+    
+}
+
+#game_g2 .num4{
+    left: 0%;
+    top: 50%;
+    margin-top: -43px;   
+    background: url(../img/game/light_red.png);
+}

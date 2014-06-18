@@ -8,8 +8,6 @@ $(function () {
 		curElem.children('button').fadeIn();
     	
     	var curMeta = _.find(gameMeta, function(item){
-    		console.log(item);
-    		console.log(curElem.attr('gameId'));
     		return item.id == curElem.attr('gameId');
     	});
 
