@@ -9,7 +9,8 @@ $(function GnbHandler() {
 	$('#page_home').show();
 
 	//GNB 핸들러
-	$('.page-locater').click(function(){
+	$('.page-locater').click(function(e){
+		e.stopImmediatePropagation();
 		var targetRef = $(this).attr('ref');
 
 		$('.page').hide();
