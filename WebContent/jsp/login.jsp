@@ -6,12 +6,11 @@
 <%@page import="java.io.*"%>
 <%
 	String id = request.getParameter("id");
-	String message = "";
+	String message = "정상적으로 로그인 되었습니다.";
 	String correct_id = "";
 	String name = "";
 	int result = 0;
 	int rowCnt = 0;
-
 	JSONObject jsono = new JSONObject();
 
 	try {
@@ -32,16 +31,21 @@
 			correct_id = rs.getString("ID");
 		}
 
-		if ( correct_id.equals(null)) {
+		if ( correct_id.equals("")) {
 			message = "해당 아이디가 존재하지 않습니다.";
 			result = 0;
-		} else {
+		} 
+		else 
+		{
 			result = 1;
-			correct_id = id;
+			correct_id = id;	
 			jsono.put("id",correct_id);
 			jsono.put("name",name);
 		}
-
+		
+		rs.close();
+		stat.close();
+		con.close();
 	} catch (ClassNotFoundException e) {
 		e.printStackTrace();
 		result = 0;
