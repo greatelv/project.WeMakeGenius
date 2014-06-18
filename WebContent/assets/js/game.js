@@ -12,13 +12,15 @@ var game = function(){
 		progess : 		$('#timeline-progress')
 	};
 
+	var type = null;
+
 	//문제 풀이시 획득 포인트
 	var acqPoint = 1000;
 
 	var point = 0;
 	var combo = 0;
 
-	var limitSec = 5000;
+	var limitSec = 60;
 	
 	var sycPoint = function(){
 		elem.score.html(point+' Point'+'&nbsp;&nbsp;<span> '+combo+' Combo</span>');
@@ -86,7 +88,7 @@ var game = function(){
 		        	}, 100);
 					
 					var id =  window.sessionStorage.id  || '';
-					var json = {"GAMETYPE":"1", "ID":id, "SCORE":point, "MAXCOMBO":combo};
+					var json = {"GAMETYPE":type, "ID":id, "SCORE":point, "MAXCOMBO":combo};
 					
 					$.ajax({
 						url		:	"jsp/putscore.jsp",
@@ -140,6 +142,9 @@ var game = function(){
 		},
 		getCombo : function(){
 			return combo;
+		},
+		setType : function(gameType){
+			type = gameType;
 		}
 	};
 }();
@@ -205,6 +210,7 @@ var game1 = function(){
 			_this.show();
 			elem.title.text('숫자대소비교');
 			game1.playSet();
+			game.setType(1);
 		},
 		playSet : function(){
 			elem.question.hide();
@@ -351,14 +357,14 @@ var game2 = function(){
 	};
 
 	var upgradeLevel = function(){
-		if(game.getScore() == 5000){
-			level ++;
-		}else if(game.getScore() == 10000){
-			level ++;
-		}else if(game.getScore() == 15000){
-			level ++;
-		}else if(game.getScore() == 20000){
-			level ++;
+		if(game.getScore() == 4000){
+			level = 1;
+		}else if(game.getScore() == 7000){
+			level = 2;
+		}else if(game.getScore() == 12000){
+			level = 3;
+		}else if(game.getScore() == 16000){
+			level = 4;
 		}
 	};
 
@@ -373,6 +379,7 @@ var game2 = function(){
 			_this.show();
 			elem.title.text('사진숫자퀴즈');
 			game2.playSet();
+			game.setType(2);
 		},
 		playSet : function(){
 			elem.picture.hide();
