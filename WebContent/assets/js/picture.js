@@ -78,3 +78,104 @@ var picture = {
 		{"LEVEL":5,"URL":"27_people.jpg","QUESTION":"How many peoples in this picture?","ANSWER":27}
 	]
 };
+/* 배열에 숫자를 중복없이 넣는 함수. 미완성 삭제가능
+function random_array(input_length)
+{
+	var input = input_length;
+	var ran_array = new Array(input);
+	var random_number = 0;
+	var ok=0;
+	var i=0;
+	var j=0;
+	for(i=0; i<input; i++)
+	{
+		console.log("dk");
+		if(i=0) // 제일 첫번째 숫자면 아무 숫자나 집어넣습니다.
+		{
+			ran_array[i] = Math.floor((Math.random() * input) + 1);
+			continue;
+		}
+		else // 첫번째 숫자가 아니면 앞의 숫자와 비교합니다.
+		{
+			ok = 0; 
+			console.log("dk");
+			while(ok == 0)
+			{
+				random_number = Math.floor((Math.random() * input) + 1);
+				j=0;
+				while(j<i) // 앞의 숫자와 비교중...
+				{
+					if(array[j] == random_number);
+					{
+						break; // 앞의 숫자와 같은 것이 하나라도 있으면 숫자를 재설정하고 다시 시작합니다.
+					}
+					j++;
+				}
+				ok = -1; // 앞의 숫자와 비교해서 겹치는 것이 전혀 없으면 검증을 종료하고 밖으로 나갑니다.
+			}
+			ran_array[i] = random_number; 
+		}
+	}
+	console.log(ran_array[0]);
+	console.log(ran_array[1]);
+	console.log(ran_array[2]);
+	console.log(ran_array[3]);
+} */
+
+
+
+/*이 함수에 레벨을 정수로 입력하면 해당 레벨의 문제가 랜덤으로 반환됩니다.
+ * 콘솔 창에 반환된 JSON과 레벨이 표시됩니다.
+ * 입력 : 정수
+ * 출력 : JSON 배열
+ */
+function random_picture(input_level)
+{
+	var random_number;
+	switch(input_level)
+	{
+		case 1:
+			console.log("레벨1 문제를 랜덤으로 가져옵니다.");
+			random_number = Math.floor(Math.random() * picture.level_1.length);
+			// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+			console.log(picture.level_1[random_number]);
+			return picture.level_1[random_number];
+			break;
+		
+		case 2:
+			console.log("레벨2 문제를 랜덤으로 가져옵니다.");
+			random_number = Math.floor(Math.random() * picture.level_2.length);
+			// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+			console.log(picture.level_2[random_number]);
+			return picture.level_2[random_number];
+			break;
+			
+		case 3:
+			console.log("레벨3 문제를 랜덤으로 가져옵니다.");
+			random_number = Math.floor(Math.random() * picture.level_3.length);
+			// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+			console.log(picture.level_3[random_number]);
+			return picture.level_3[random_number];
+			break;
+			
+		case 4:
+			console.log("레벨4 문제를 랜덤으로 가져옵니다.");
+			random_number = Math.floor(Math.random() * picture.level_4.length);
+			// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+			console.log(picture.level_4[random_number]);
+			return picture.level_4[random_number];
+			break;
+			
+		case 5:
+			console.log("레벨5 문제를 랜덤으로 가져옵니다.");
+			random_number = Math.floor(Math.random() * picture.level_5.length);
+			// 랜덤숫자를 만들지만 최대 숫자가 해당 레벨의 최대 배열을 못넘습니다.
+			console.log(picture.level_5[random_number]);
+			return picture.level_5[random_number];
+			break;
+			
+		default :
+			console.log("예외 : random_picture 함수에는 1~5만 입력가능합니다.");
+			return -1;
+	}
+}
