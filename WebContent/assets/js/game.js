@@ -20,7 +20,7 @@ var game = function(){
 	var point = 0;
 	var combo = 0;
 
-	var limitSec = 60;
+	var limitSec = 2;
 	
 	var sycPoint = function(){
 		elem.score.html(point+' Point'+'&nbsp;&nbsp;<span> '+combo+' Combo</span>');
@@ -29,6 +29,11 @@ var game = function(){
 	//setTimer 객체들
 	var setTimerArray = [];
 
+	//게임 오버에서 홈으로 버튼 핸들러
+	$('#finish_message .home').click(function(){
+		$('.page-locater[ref="play"]').trigger('click');
+	});
+
 	return {
 
 		readyGo : function(callback){	//레디고 출력
@@ -36,7 +41,7 @@ var game = function(){
 			$('.page').hide();
 		    $('#page_games').show();
 		    $('#rank-scroll').hide();
-		    $("#finish_message").html("");
+		    $("#finish_message").hide();
 		    
 		    setTimerArray.push(setTimeout(function(){
 		    	$("#start_message").html("<img src='assets/img/game/img_ready.png'></img>");
@@ -81,10 +86,10 @@ var game = function(){
 					setTimeout(function(){
 						$(".game-info-header").hide();
 						$(".play-ground").hide();
-		        		$("#finish_message").html(
-		        				"<img src='assets/img/game/img_gameover.png'></img><br/>" +
-		        				"<h2>점수 : "+ point + "</h2>" + 
-		        				"<button id='back_to_select'>BACK</button>");
+
+		        		$("#finish_message").show();
+		        		$("#finish_message").find('.point').text(point+' Point');
+		        		$("#finish_message").find('.combo').text(combo+' Combo');
 		        	}, 100);
 					
 					var id =  window.sessionStorage.id  || '';
