@@ -37,9 +37,6 @@ $(function GnbHandler() {
 		game.clearGame();
 	});
 
-	//순위 정보 Marquee
-	$("#rank-scroll > ul").liScroll({travelocity: 0.13});
-
 });
 
 //Home 페이지 핸들러

@@ -93,6 +93,45 @@
 		}finally{
 			out.println(jsona);	
 		}
+	}else if(type.equals("marquee")){
+		
+		try{
+			
+			String driverName = "com.mysql.jdbc.Driver";
+		
+			Class.forName(driverName);
+			Connection con = DriverManager.getConnection("jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/wmg_dev","wmg","wmg");
+		
+			String sql  = 	"SELECT a.score, a.user_id, b.name "+ 
+								"FROM play AS a "+
+								"LEFT OUTER JOIN user AS b ON a.user_id = b.ID "+
+							"ORDER BY a.score DESC LIMIT 10 ";
+
+			PreparedStatement ps;
+			ResultSet rs;
+			Statement stat = con.createStatement();
+			rs = stat.executeQuery(sql);
+			while(rs.next()){
+				JSONObject 	jsono = new JSONObject();
+			
+				jsono.put("score", rs.getInt("score"));
+				jsono.put("user_id", rs.getInt("user_id"));
+				jsono.put("name", rs.getString("name"));
+				jsona.put(jsono); 	 	
+				
+			}
+			rs.close();
+			stat.close();
+			con.close();
+		}catch (ClassNotFoundException e){
+			//e.printStackTrace();
+			out.println(e);
+		}catch (SQLException e){
+			//e.printStackTrace();
+			out.println(e);
+		}finally{
+			out.println(jsona);	
+		}
 	}
 %>
 

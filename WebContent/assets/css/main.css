@@ -277,7 +277,9 @@ a:after {
 }
 
 #rank-scroll ul li .rank{
+    font-size: 20px;
 	
+    color: cadetblue;
 }
 
 #rank-scroll ul li .user{
@@ -285,6 +287,7 @@ a:after {
 }
 
 #rank-scroll ul li .point{
+    color: darksalmon;
 	
 }
 
