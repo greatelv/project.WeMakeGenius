@@ -83,6 +83,26 @@ var game = function(){
 		        				"<img src='assets/img/game/img_gameover.png'></img><br/>" +
 		        				"<h2>점수 : "+ point +"</h2>");
 		        	}, 100);
+					
+					//var id =  window.sessionStorage.id  || '';
+					var json = {"GAMETYPE":"1", "ID":id, "SCORE":point, "MAXCOMBO":combo};
+					alert(json);
+					/*$.ajax({
+						url		:	"jsp/putscore.jsp",
+						type	:	"POST",
+						data	:	json,
+						datatype:	"json",
+						
+						success	: function(result){
+							alert(result);
+						},
+						error	: function(){
+							console.log('error from post');
+						},
+						complete: function(){
+							console.log('complete from post');
+						}
+					});*/
 				}
 
 			});

@@ -125,6 +125,14 @@ $(function UserHandler() {
 
 					onSession();
 					
+					$.ajax({
+						url		:	"jsp/postvisit.jsp?id="+id,
+						type	: 	"POST",
+						datatype:	"json",
+						success :	function(data){
+							//alert(data);
+						}
+					});
 				}else{
 					alert('로그인에 실패하였습니다.');
 				}

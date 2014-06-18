@@ -7,7 +7,8 @@
 <%@page import="java.io.*"%>
 
 <%
-	String ID = request.getParameter("ID");
+	String ID = request.getParameter("id");
+	String message = "정상 종료 되었습니다.";
 	try{
 		String driverName = "com.mysql.jdbc.Driver";
 		

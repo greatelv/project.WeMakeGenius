@@ -13,6 +13,7 @@ int score = Integer.parseInt(SCORE);
 String MAXCOMBO = request.getParameter("MAXCOMBO");
 int maxcombo = Integer.parseInt(MAXCOMBO);
 String ID = request.getParameter("ID");
+String message = "이상없이 저장됨";
 
 //out.print(GAMETYPE + "," + score + "," + maxcombo + "," + ID);
 
@@ -34,9 +35,11 @@ try{
 	ps.close();
 }catch (ClassNotFoundException e){
 	e.printStackTrace();
+	message = e.getMessage().toString();
 }catch (SQLException e){
 	e.printStackTrace();
+	message = e.getMessage().toString();
 }finally{
-	out.println("score입력 완료");	
+	out.println("putscore over : " + message);	
 }
 %>
