@@ -84,25 +84,29 @@ var game = function(){
 		        				"<h2>점수 : "+ point +"</h2>");
 		        	}, 100);
 					
-					//var id =  window.sessionStorage.id  || '';
+					var id =  window.sessionStorage.id  || '';
 					var json = {"GAMETYPE":"1", "ID":id, "SCORE":point, "MAXCOMBO":combo};
-					alert(json);
-					/*$.ajax({
+					
+					$.ajax({
 						url		:	"jsp/putscore.jsp",
-						type	:	"POST",
+						type	:	"POST",	
 						data	:	json,
 						datatype:	"json",
 						
 						success	: function(result){
-							alert(result);
+							//alert(result);
 						},
 						error	: function(){
 							console.log('error from post');
 						},
 						complete: function(){
+							$(".main_audio").trigger('pause');	
+							var ending = "assets/sound/BT_ending.mp3";
+								main_audio = $('#main_audio').attr("src",ending)[0];
+								main_audio = $('#main_audio').attr("loop",true)[0];       
 							console.log('complete from post');
 						}
-					});*/
+					});
 				}
 
 			});
