@@ -21,6 +21,41 @@ $(function GnbHandler() {
 
 		//게임 진행중에 나왔을 시 기존 게임 컨테이너 clear
 		game.clearGame();
+		if(targetRef=='play'){
+			if(window.sessionStorage.length != 0){
+				$('.page-locater[ref="play"]').trigger('click');
+			}
+			else{
+				$('.page-locater[ref="home"]').trigger('click');
+				alert('로그인을 먼저 해야 합니다.');
+			}
+		}
+		else if(targetRef=='stats'){
+			if(window.sessionStorage.length != 0){
+				var id =  window.sessionStorage.id  || '';
+				$.ajax({
+					url		:	"jsp/getscore.jsp?id="+id,
+					type	:	"POST",
+					datatype:	"json",
+					success	:	function(data){
+						var json = JSON.parse(data);
+						var score = "<span>" + json[0].MAXSCORE + "</span>";
+						alert(score);
+					}
+				});
+			}
+			else
+			{
+				alert('로그인을 먼저 해야 합니다.');
+				$('#compare-play-cnt').append("<span>0점</span>");
+				$('#compare-max-combo').append("<span>0점</span>");
+				$('#compare-max-score').append("<span>0점</span>");
+				
+				$('#item-play-cnt').append("<span>0점</span>");
+				$('#item-max-combo').append("<span>0점</span>");
+				$('#item-max-score').append("<span>0점</span>");
+			}
+		}
 	});
 
 	//순위 정보 Marquee
@@ -30,7 +65,6 @@ $(function GnbHandler() {
 
 //Home 페이지 핸들러
 $(function HomeHandler() {
-
 	//Home Page 게임 플레이 버튼 핸들러 및 로그인 유무에 따른 게임페이지 이용제한
 	$('#hello button').click(function(){
 		if(window.sessionStorage.length != 0){
@@ -38,33 +72,6 @@ $(function HomeHandler() {
 		}
 		else{
 			alert('로그인을 먼저 해야 합니다.');	
-		}
-	});
-	$('#game_play_menu').click(function(){
-		if(window.sessionStorage.length != 0){
-			$('.page-locater[ref="play"]').trigger('click');
-		}
-		else{
-			$('.page-locater[ref="home"]').trigger('click');
-			alert('로그인을 먼저 해야 합니다.');
-		}
-	});
-	
-	//Home Page 통게 메뉴 핸들러 및 로그인 유무에 따른 점수 보기 제한
-	$('#stats-menu').click(function(){
-		if(window.sessionStorage.length != 0){
-			
-		}
-		else{
-			$('.page-locater[ref="home"]').trigger('click');
-			alert('로그인을 먼저 해야 합니다.');
-			$('#compare-play-cnt').append("<span>0점</span>");
-			$('#compare-max-combo').append("<span>0점</span>");
-			$('#compare-max-score').append("<span>0점</span>");
-			
-			$('#item-play-cnt').append("<span>0점</span>");
-			$('#item-max-combo').append("<span>0점</span>");
-			$('#item-max-score').append("<span>0점</span>");
 		}
 	});
 });

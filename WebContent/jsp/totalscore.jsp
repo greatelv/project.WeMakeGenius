@@ -19,7 +19,7 @@
 		
 		String sql  = "SELECT USER_ID, GAME_TYPE, SCORE, MAX_COMBO ";
 		   	   sql += "FROM play GROUP BY GAME_TYPE, USER_ID, SCORE ";
-		   	   sql += "HAVING USER_ID = '"+ id +"' ";
+		   	   sql += "HAVING USER_ID != '' ";
 		   	   sql += "ORDER BY SCORE DESC";
 		
 		PreparedStatement ps;
