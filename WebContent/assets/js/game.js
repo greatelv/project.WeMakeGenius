@@ -20,7 +20,7 @@ var game = function(){
 	var point = 0;
 	var combo = 0;
 
-	var limitSec = 2;
+	var limitSec = 50;
 	
 	var sycPoint = function(){
 		elem.score.html(point+' Point'+'&nbsp;&nbsp;<span> '+combo+' Combo</span>');
