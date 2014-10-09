@@ -5,3 +5,4 @@ WebContent/WEB-INF/.gitignore
 .metadata/
 .classpath
 RemoteSystemsTempFiles/.project
+/build/
